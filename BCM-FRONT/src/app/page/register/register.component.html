@@ -1,1 +1,119 @@
-<p>register works!</p>
+<div class="flex min-h-screen  w-full items-center justify-center text-gray-600 bg-gray-950">
+  <div class="relative">
+
+    <div
+      class="hidden sm:block h-56 w-56 text-green-800 hover:animate-ping animate-pulse absolute a-z-10 -left-40 ">
+      <svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'>
+        <defs>
+          <pattern id='a' patternUnits='userSpaceOnUse' width='40' height='40' patternTransform='scale(0.6) rotate(0)'>
+            <rect x='0' y='0' width='100%' height='100%' fill='none' />
+            <path d='M11 6a5 5 0 01-5 5 5 5 0 01-5-5 5 5 0 015-5 5 5 0 015 5' stroke-width='1' stroke='none'
+              fill='currentColor' />
+          </pattern>
+        </defs>
+        <rect width='80%' height='50%' transform='translate(0,0)' fill='url(#a)' />
+      </svg>
+    </div>
+    <div
+      class="hidden sm:block h-28 w-28 text-green-800 hover:animate-ping animate-pulse absolute a-z-10 -right-20 -bottom-10">
+      <svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'>
+        <defs>
+          <pattern id='b' patternUnits='userSpaceOnUse' width='40' height='40' patternTransform='scale(0.5) rotate(0)'>
+            <rect x='0' y='0' width='100%' height='100%' fill='none' />
+            <path d='M11 6a5 5 0 01-5 5 5 5 0 01-5-5 5 5 0 015-5 5 5 0 015 5' stroke-width='1' stroke='none'
+              fill='currentColor' />
+          </pattern>
+        </defs>
+        <rect width='100%' height='60%' transform='translate(0,0)' fill='url(#b)' />
+      </svg>
+    </div>
+    <!-- Register -->
+    <div class="relative flex flex-col sm:w-[30rem] rounded-lg ">
+      <div class="flex-auto p-6">
+        <!-- Logo -->
+        <div class="mb-10 flex flex-shrink-0 flex-grow-0 items-center justify-center overflow-hidden">
+          <a href="/" aria-label="BCM" title="BCM" class="inline-flex items-center lg:mx-auto">
+            <svg class="w-11 " fill="#2e7d32" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 338.814 338.814" xml:space="preserve">
+              <path d="M332.342,303.989l-145.46-133.717L334.151,10.061c2.192-2.385,2.096-6.078-0.217-8.345c-2.313-2.267-6.009-2.29-8.348-0.051
+      L167.729,152.67L10.062,7.739C7.677,5.547,3.983,5.643,1.717,7.956c-2.267,2.313-2.29,6.007-0.051,8.348l147.466,154.157
+      L9.25,304.271c-3.922,3.765-6.113,8.833-6.168,14.27c-0.056,5.437,2.031,10.549,5.876,14.395c3.791,3.79,8.829,5.877,14.188,5.877
+      c5.587,0,10.963-2.354,14.758-6.467l130.391-141.851l135.978,142.147c3.766,3.924,8.834,6.117,14.27,6.173
+      c0.071,0,0.143,0.001,0.214,0.001c5.356,0,10.384-2.082,14.179-5.876c3.9-3.901,5.986-9.086,5.874-14.602
+      C338.697,312.825,336.402,307.731,332.342,303.989z M304.792,315.824l-8.297-8.673l10.324-10.324l8.842,8.128L304.792,315.824z
+       M174.017,166.536c-0.01,0.011-0.022,0.018-0.032,0.029s-0.016,0.024-0.026,0.035L53.196,297.976l-9.782-9.781l155.549-148.797
+      L174.017,166.536z M36.94,315.661l-10.872-10.872l8.673-8.297l10.327,10.327L36.94,315.661z M139.41,142.939l19.629,18.044
+      l-1.237,1.183L139.41,142.939z M17.444,324.45c-1.545-1.545-2.384-3.601-2.362-5.787c0.022-2.111,0.85-4.079,2.321-5.569
+      l11.395,11.395c-1.516,1.495-3.504,2.323-5.652,2.323C20.992,326.812,18.967,325.973,17.444,324.45z M178.762,179.107
+      l119.215,109.591l-9.779,9.779L176.432,181.641L178.762,179.107z M324.449,324.454c-1.525,1.524-3.545,2.361-5.697,2.361
+      c-0.028,0-0.057,0-0.086,0c-2.111-0.022-4.078-0.852-5.569-2.324l11.392-11.392c1.453,1.472,2.279,3.401,2.321,5.484
+      C326.857,320.799,326.018,322.885,324.449,324.454z" />
+            </svg>
+            <span class="ml-2 text-4xl font-bold tracking-wide text-white uppercase font-mono ">BCM</span>
+          </a>
+        </div>
+        <!-- /Logo -->
+
+        <form id="" class="mb-4" action="#" method="POST">
+          <div class="mb-4">
+            <label for="firstName" class="mb-2 inline-block text-xs font-medium font-mono uppercase text-gray-200">First Name</label>
+            <input type="text"
+              class="block w-full cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow"
+              id="firstName" name="firstName" placeholder="Enter your first Name" autofocus="" />
+          </div>
+          <div class="mb-4">
+            <label for="lastName" class="mb-2 inline-block text-xs font-medium font-mono uppercase text-gray-200">Last Name</label>
+            <input type="text"
+              class="block w-full cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow"
+              id="lastName" name="lastName" placeholder="Enter your Last Name" autofocus="" />
+          </div>
+          <div class="mb-4">
+            <label for="email" class="mb-2 inline-block text-xs font-medium font-mono uppercase text-gray-200">Email</label>
+            <input type="email"
+              class="block w-full cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow"
+              id="email" name="email" placeholder="Enter your email or username" autofocus="" />
+          </div>
+          <div class="mb-4">
+            <label for="telephone" class="mb-2 inline-block text-xs font-medium font-mono uppercase text-gray-200">Phone Number</label>
+            <input type="tel"
+              class="block w-full cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow"
+              id="telephone" name="telephone" placeholder="Enter your Phone Number" autofocus="" />
+          </div>
+          <div class="mb-7">
+            <div class="flex justify-between">
+              <label class="mb-2 inline-block text-xs font-medium font-mono uppercase text-gray-200"
+                for="password">Password</label>
+            </div>
+            <div class="relative flex w-full flex-wrap items-stretch">
+              <input type="password" id="password"
+                class="relative block flex-auto cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow"
+                name="password" placeholder="············" />
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <button
+              class="grid w-full font-mono group relative overflow-hidden rounded px-12 py-3 text-sm font-medium text-white bg-green-800 hover:text-green-800 hover:bg-white focus:outline-none focus:ring "
+              type="submit">
+              <span
+                class="ease absolute left-0 top-0 h-0 w-0 border-t-2 border-green-800 transition-all duration-500 group-hover:w-full"></span>
+              <span
+                class="ease absolute right-0 top-0 h-0 w-0 border-r-2 border-green-800 transition-all duration-500 group-hover:h-full"></span>
+              <span
+                class="ease absolute bottom-0 right-0 h-0 w-0 border-b-2 border-green-800 transition-all duration-500 group-hover:w-full"></span>
+              <span
+                class="ease absolute bottom-0 left-0 h-0 w-0 border-l-2 border-green-800 transition-all duration-500 group-hover:h-full"></span>
+              Sign in
+            </button>
+          </div>
+        </form>
+
+        <p class="mb-4 text-center font-mono">
+          You have already an account?
+          <a href="/login" class="cursor-pointer font-mono text-gray-300 no-underline hover:text-green-800"> Login </a>
+        </p>
+      </div>
+    </div>
+    <!-- /Register -->
+  </div>
+</div>
