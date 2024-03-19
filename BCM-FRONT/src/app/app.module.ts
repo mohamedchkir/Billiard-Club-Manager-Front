@@ -7,6 +7,7 @@ import { HomeComponent } from './page/home/home.component';
 import { ClubComponent } from './page/club/club.component';
 import { LoginComponent } from './page/login/login.component';
 import { RegisterComponent } from './page/register/register.component';
+import { PlayerComponent } from './page/player/player.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { RegisterComponent } from './page/register/register.component';
     HomeComponent,
     ClubComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PlayerComponent
   ],
   imports: [
     BrowserModule,
