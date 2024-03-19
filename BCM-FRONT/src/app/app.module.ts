@@ -1,13 +1,19 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import {NgModule, isDevMode} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './page/home/home.component';
-import { ClubComponent } from './page/club/club.component';
-import { LoginComponent } from './page/login/login.component';
-import { RegisterComponent } from './page/register/register.component';
-import { PlayerComponent } from './page/player/player.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {HomeComponent} from './view/page/home/home.component';
+import {ClubComponent} from './view/page/club/club.component';
+import {LoginComponent} from './view/page/login/login.component';
+import {RegisterComponent} from './view/page/register/register.component';
+import {PlayerComponent} from './view/page/player/player.component';
+import {StoreModule} from '@ngrx/store';
+import {EffectsModule} from '@ngrx/effects';
+import {ClubEffects} from './core/state/club/club.effects';
+import {HttpClientModule, provideHttpClient, withFetch} from "@angular/common/http";
+import {clubFeature, clubFeatureKey} from "./core/state/club/club.reducer";
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -20,11 +26,18 @@ import { PlayerComponent } from './page/player/player.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([]),
+    StoreModule.forFeature(clubFeature),
+    EffectsModule.forFeature([ClubEffects]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   providers: [
-    provideClientHydration()
+    provideHttpClient(withFetch())
+
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
