@@ -17,6 +17,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { FooterComponent } from './view/component/footer/footer.component';
 import { SearchComponent } from './view/component/search/search.component';
 import { NavbarComponent } from './view/component/navbar/navbar.component';
+import { StatisticComponent } from './view/component/statistic/statistic.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NavbarComponent } from './view/component/navbar/navbar.component';
     PlayerComponent,
     FooterComponent,
     SearchComponent,
-    NavbarComponent
+    NavbarComponent,
+    StatisticComponent
   ],
   imports: [
     BrowserModule,

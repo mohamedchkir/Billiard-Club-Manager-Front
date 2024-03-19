@@ -1,132 +1,8 @@
-<!-- Navbar -->
-<div class="bg-gray-950">
-  <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-    <div class="relative  grid items-center grid-cols-2 lg:grid-cols-3">
-      <ul class="flex items-center space-x-8 lg:flex">
-        <li><a href="/" aria-label="Our product" title="Our product"
-            class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-green-800 font-mono">Club</a>
-        </li>
-        <li><a href="/" aria-label="Our product" title="Our product"
-            class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-green-800 font-mono">Players</a>
-        </li>
-        <li><a href="/" aria-label="Product pricing" title="Product pricing"
-            class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-green-800 font-mono">News</a>
-        </li>
-      </ul>
-      <a href="/" aria-label="BCM" title="BCM" class="inline-flex items-center lg:mx-auto">
-        <svg class="w-8 " fill="#2e7d32" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 338.814 338.814" xml:space="preserve">
-          <path d="M332.342,303.989l-145.46-133.717L334.151,10.061c2.192-2.385,2.096-6.078-0.217-8.345c-2.313-2.267-6.009-2.29-8.348-0.051
-	L167.729,152.67L10.062,7.739C7.677,5.547,3.983,5.643,1.717,7.956c-2.267,2.313-2.29,6.007-0.051,8.348l147.466,154.157
-	L9.25,304.271c-3.922,3.765-6.113,8.833-6.168,14.27c-0.056,5.437,2.031,10.549,5.876,14.395c3.791,3.79,8.829,5.877,14.188,5.877
-	c5.587,0,10.963-2.354,14.758-6.467l130.391-141.851l135.978,142.147c3.766,3.924,8.834,6.117,14.27,6.173
-	c0.071,0,0.143,0.001,0.214,0.001c5.356,0,10.384-2.082,14.179-5.876c3.9-3.901,5.986-9.086,5.874-14.602
-	C338.697,312.825,336.402,307.731,332.342,303.989z M304.792,315.824l-8.297-8.673l10.324-10.324l8.842,8.128L304.792,315.824z
-	 M174.017,166.536c-0.01,0.011-0.022,0.018-0.032,0.029s-0.016,0.024-0.026,0.035L53.196,297.976l-9.782-9.781l155.549-148.797
-	L174.017,166.536z M36.94,315.661l-10.872-10.872l8.673-8.297l10.327,10.327L36.94,315.661z M139.41,142.939l19.629,18.044
-	l-1.237,1.183L139.41,142.939z M17.444,324.45c-1.545-1.545-2.384-3.601-2.362-5.787c0.022-2.111,0.85-4.079,2.321-5.569
-	l11.395,11.395c-1.516,1.495-3.504,2.323-5.652,2.323C20.992,326.812,18.967,325.973,17.444,324.45z M178.762,179.107
-	l119.215,109.591l-9.779,9.779L176.432,181.641L178.762,179.107z M324.449,324.454c-1.525,1.524-3.545,2.361-5.697,2.361
-	c-0.028,0-0.057,0-0.086,0c-2.111-0.022-4.078-0.852-5.569-2.324l11.392-11.392c1.453,1.472,2.279,3.401,2.321,5.484
-	C326.857,320.799,326.018,322.885,324.449,324.454z" />
-        </svg>
-        <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase font-mono ">BCM</span>
-      </a>
-      <ul class="items-center hidden ml-auto space-x-8 lg:flex">
-        <li>
-          <a href="/login" aria-label="Sign in" title="Sign in"
-            class="font-mono group relative inline-block overflow-hidden rounded px-12 py-3 text-sm font-medium text-white hover:text-green-800 focus:outline-none focus:ring ">
-            <span
-              class="ease absolute left-0 top-0 h-0 w-0 border-t-2 border-green-800 transition-all duration-200 group-hover:w-full"></span>
-            <span
-              class="ease absolute right-0 top-0 h-0 w-0 border-r-2 border-green-800 transition-all duration-200 group-hover:h-full"></span>
-            <span
-              class="ease absolute bottom-0 right-0 h-0 w-0 border-b-2 border-green-800 transition-all duration-200 group-hover:w-full"></span>
-            <span
-              class="ease absolute bottom-0 left-0 h-0 w-0 border-l-2 border-green-800 transition-all duration-200 group-hover:h-full"></span>
-            Sign in
-          </a>
-        </li>
+  <!-- Navbar -->
+  <app-navbar/>
 
-        <li>
-          <a href="/register" aria-label="Sign up" title="Sign up"
-            class=" font-mono group relative inline-block overflow-hidden rounded px-12 py-3 text-sm font-medium text-green-800 bg-white hover:text-white hover:bg-green-800 focus:outline-none focus:ring ">
-            <span
-              class="ease absolute left-0 top-0 h-0 w-0 border-t-2 border-white transition-all duration-200 group-hover:w-full"></span>
-            <span
-              class="ease absolute right-0 top-0 h-0 w-0 border-r-2 border-white transition-all duration-200 group-hover:h-full"></span>
-            <span
-              class="ease absolute bottom-0 right-0 h-0 w-0 border-b-2 border-white transition-all duration-200 group-hover:w-full"></span>
-            <span
-              class="ease absolute bottom-0 left-0 h-0 w-0 border-l-2 border-white transition-all duration-200 group-hover:h-full"></span>
-            Sign up
-          </a>
-        </li>
-      </ul>
-      <!-- Mobile menu -->
-      <div class="ml-auto lg:hidden">
-        <button aria-label="Open Menu" title="Open Menu"
-          class="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline">
-          <svg class="w-5 text-gray-600" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"></path>
-            <path fill="currentColor" d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"></path>
-            <path fill="currentColor" d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"></path>
-          </svg>
-        </button>
-        <!-- Mobile menu dropdown
-        <div class="absolute top-0 left-0 w-full">
-          <div class="p-5 bg-white border rounded shadow-sm">
-            <div class="flex items-center justify-between mb-4">
-              <div>
-                <a href="/" aria-label="Company" title="Company" class="inline-flex items-center">
-                  <svg class="w-8 text-green-900" viewBox="0 0 24 24" stroke-linejoin="round" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" stroke="currentColor" fill="none">
-                    <rect x="3" y="1" width="7" height="12"></rect>
-                    <rect x="3" y="17" width="7" height="6"></rect>
-                    <rect x="14" y="1" width="7" height="6"></rect>
-                    <rect x="14" y="11" width="7" height="12"></rect>
-                  </svg>
-                  <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">Company</span>
-                </a>
-              </div>
-              <div>
-                <button aria-label="Close Menu" title="Close Menu" class="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
-                  <svg class="w-5 text-gray-600" viewBox="0 0 24 24">
-                    <path
-                      fill="currentColor"
-                      d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3l-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9,4.7,20,5,20s0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L13.4,12l6.3-6.3C20.1,5.3,20.1,4.7,19.7,4.3z"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <nav>
-              <ul class="space-y-4">
-                <li><a href="/" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-green-900">Product</a></li>
-                <li><a href="/" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-green-900">Features</a></li>
-                <li><a href="/" aria-label="Product pricing" title="Product pricing" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-green-900">Pricing</a></li>
-                <li><a href="/" aria-label="Sign in" title="Sign in" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-green-900">Sign in</a></li>
-                <li>
-                  <a
-                    href="/"
-                    class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-green-900 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                    aria-label="Sign up"
-                    title="Sign up"
-                  >
-                    Sign up
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-        -->
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Header -->
-<div class="bg-gray-950">
+  <!-- Header -->
+  <div class="bg-gray-950">
   <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
     <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
       <div class="flex flex-col mb-16 sm:text-center sm:mb-0">
@@ -161,7 +37,6 @@
     </div>
   </div>
 </div>
-<div>
 
   <!-- Section of services -->
   <div class="bg-gray-950">
@@ -190,8 +65,7 @@
           <div
             class="flex items-center justify-center hover:bg-green-800  hover:scale-150 w-10 h-10 mx-auto mb-4 rounded-full border border-white sm:w-12 sm:h-12">
             <svg xmlns="http://www.w3.org/2000/svg" fill="#ffff" class="p-1 sm:w-14 sm:h-14 mt-2"
-              xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="px" viewBox="0 0 100 125"
-              xml:space="preserve">
+                x="0px" y="px" viewBox="0 0 100 125">
               <path
                 d="M69.1,20H30.9c-0.8,0-1.5,0.7-1.5,1.5v57c0,0.8,0.7,1.5,1.5,1.5h38.2c0.8,0,1.5-0.7,1.5-1.5v-57C70.6,20.7,69.9,20,69.1,20z   M32.4,23h3.1c0.2,0.4,0.4,0.8,0.4,1.2c0,1.2-1,2.2-2.2,2.2c-0.5,0-0.9-0.1-1.2-0.4V23z M32.4,48.1c0.4-0.2,0.8-0.4,1.2-0.4  c1.2,0,2.2,1,2.2,2.2s-1,2.2-2.2,2.2c-0.5,0-0.9-0.1-1.2-0.4V48.1z M35.5,77h-3.1v-3.1c0.4-0.2,0.8-0.4,1.2-0.4c1.2,0,2.2,1,2.2,2.2  C35.9,76.2,35.8,76.6,35.5,77z M67.6,77h-3.1c-0.2-0.4-0.4-0.8-0.4-1.2c0-1.2,1-2.2,2.2-2.2c0.5,0,0.9,0.1,1.2,0.4V77z M67.6,51.9  c-0.4,0.2-0.8,0.4-1.2,0.4c-1.2,0-2.2-1-2.2-2.2s1-2.2,2.2-2.2c0.5,0,0.9,0.1,1.2,0.4V51.9z M67.6,44.9c-0.4-0.1-0.8-0.2-1.2-0.2  c-2.9,0-5.2,2.4-5.2,5.2s2.4,5.2,5.2,5.2c0.4,0,0.8-0.1,1.2-0.2v15.6c-0.4-0.1-0.8-0.2-1.2-0.2c-2.9,0-5.2,2.4-5.2,5.2  c0,0.4,0.1,0.8,0.2,1.2H38.7c0.1-0.4,0.2-0.8,0.2-1.2c0-2.9-2.4-5.2-5.2-5.2c-0.4,0-0.8,0.1-1.2,0.2V55.1c0.4,0.1,0.8,0.2,1.2,0.2  c2.9,0,5.2-2.4,5.2-5.2s-2.4-5.2-5.2-5.2c-0.4,0-0.8,0.1-1.2,0.2v-6.4h35.2V44.9z M67.6,35.5H32.4v-6.2c0.4,0.1,0.8,0.2,1.2,0.2  c2.9,0,5.2-2.4,5.2-5.2c0-0.4-0.1-0.8-0.2-1.2h22.5c-0.1,0.4-0.2,0.8-0.2,1.2c0,2.9,2.4,5.2,5.2,5.2c0.4,0,0.8-0.1,1.2-0.2V35.5z   M67.6,26.1c-0.4,0.2-0.8,0.4-1.2,0.4c-1.2,0-2.2-1-2.2-2.2c0-0.5,0.1-0.9,0.4-1.2h3.1V26.1z M45.5,73.1h9c1.1,0,2.2-0.6,2.8-1.5  c0.6-1,0.7-2.1,0.1-3.2l-4.5-9c-0.6-1.1-1.7-1.8-2.9-1.8s-2.4,0.7-2.9,1.8l-4.5,9c-0.5,1-0.5,2.2,0.1,3.2  C43.3,72.5,44.4,73.1,45.5,73.1z M45.3,69.7l4.5-9c0,0,0.1-0.1,0.2-0.1s0.2,0.1,0.2,0.1l4.5,9c0,0.1,0,0.2,0,0.2  c0,0.1-0.1,0.1-0.2,0.1h-9c-0.1,0-0.2,0-0.2-0.1C45.3,69.9,45.3,69.8,45.3,69.7z" />
             </svg>
@@ -208,8 +82,7 @@
           <div
             class="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full border hover:bg-green-800 hover:scale-150  border-white sm:w-12 sm:h-12">
             <svg xmlns="http://www.w3.org/2000/svg" fill="#ffff" class="p-1 sm:w-14 sm:h-11 mt-2"
-              xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 90 112.5"
-              enable-background="new 0 0 90 90" xml:space="preserve">
+              x="0px" y="0px" viewBox="0 0 90 112.5">
               <path
                 d="M82.457,42.304C81.05,22.757,64.613,7.445,45.036,7.445c-0.905,0-1.825,0.033-2.732,0.099  c-10.005,0.72-19.131,5.293-25.696,12.877S6.822,37.692,7.543,47.697C8.95,67.243,25.387,82.556,44.964,82.556  c0.905,0,1.825-0.033,2.732-0.099c10.005-0.72,19.131-5.294,25.696-12.878S83.178,52.309,82.457,42.304z M59.8,18.919l-1.541,2.717  c-5.147-2.922-10.966-4.051-16.812-3.266l-0.416-3.096C47.562,14.399,54.054,15.659,59.8,18.919z M44.933,74.994  c-5.427,0-10.704-1.471-15.427-4.32c-6.857-4.139-11.692-10.699-13.616-18.476l3.031-0.75C20.645,58.414,24.977,64.293,31.119,68  c5.069,3.058,10.849,4.343,16.719,3.715l0.332,3.105C47.087,74.937,46.007,74.994,44.933,74.994z M45,65.292  c-11.207,0-20.292-9.085-20.292-20.292c0-11.207,9.085-20.292,20.292-20.292S65.292,33.793,65.292,45  C65.292,56.207,56.207,65.292,45,65.292z M49.322,44.135c1.507-1.247,2.47-3.131,2.47-5.235c0-3.745-3.047-6.791-6.792-6.791  s-6.792,3.046-6.792,6.791c0,2.104,0.962,3.988,2.47,5.235c-1.955,1.368-3.239,3.633-3.239,6.196c0,4.17,3.392,7.562,7.562,7.562  s7.562-3.392,7.562-7.562C52.562,47.768,51.278,45.503,49.322,44.135z M45,35.232c2.023,0,3.669,1.646,3.669,3.668  c0,2.023-1.646,3.669-3.669,3.669s-3.669-1.646-3.669-3.669C41.331,36.877,42.977,35.232,45,35.232z M45,54.769  c-2.447,0-4.438-1.991-4.438-4.438s1.991-4.438,4.438-4.438s4.438,1.991,4.438,4.438S47.447,54.769,45,54.769z" />
             </svg>
@@ -253,7 +126,6 @@
       </div>
     </div>
   </div>
-
 
   <!-- Top Player -->
   <div class="bg-gray-950">
@@ -388,99 +260,8 @@
     </div>
   </div>
 
-
   <!-- Statistics -->
-  <div class="bg-gray-950">
-
-    <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-      <div class="grid grid-cols-2 row-gap-8 md:grid-cols-3">
-        <div class="text-center md:border-r">
-          <h6 class="text-4xl font-bold text-white lg:text-5xl xl:text-6xl">144K</h6>
-          <p class="text-sm font-medium tracking-widest text-white uppercase lg:text-base">
-            Clients
-          </p>
-        </div>
-        <div class="text-center md:border-r">
-          <h6 class="text-4xl font-bold text-white lg:text-5xl xl:text-6xl">12.9K</h6>
-          <p class="text-sm font-medium tracking-widest text-white uppercase lg:text-base">
-            Clubs
-          </p>
-        </div>
-        <div class="text-center">
-          <h6 class="text-4xl font-bold text-white lg:text-5xl xl:text-6xl">24.5K</h6>
-          <p class="text-sm font-medium tracking-widest text-white uppercase lg:text-base">
-            Players
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <app-statistic/>
 
   <!-- Footer -->
-  <div class="bg-gray-950">
-    <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-      <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-3">
-        <div class="sm:col-span-2">
-          <a href="/" aria-label="BCM" title="BCM" class="inline-flex items-center lg:mx-auto">
-            <svg class="w-8 " fill="#2e7d32" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 338.814 338.814" xml:space="preserve">
-              <path d="M332.342,303.989l-145.46-133.717L334.151,10.061c2.192-2.385,2.096-6.078-0.217-8.345c-2.313-2.267-6.009-2.29-8.348-0.051
-          L167.729,152.67L10.062,7.739C7.677,5.547,3.983,5.643,1.717,7.956c-2.267,2.313-2.29,6.007-0.051,8.348l147.466,154.157
-          L9.25,304.271c-3.922,3.765-6.113,8.833-6.168,14.27c-0.056,5.437,2.031,10.549,5.876,14.395c3.791,3.79,8.829,5.877,14.188,5.877
-          c5.587,0,10.963-2.354,14.758-6.467l130.391-141.851l135.978,142.147c3.766,3.924,8.834,6.117,14.27,6.173
-          c0.071,0,0.143,0.001,0.214,0.001c5.356,0,10.384-2.082,14.179-5.876c3.9-3.901,5.986-9.086,5.874-14.602
-          C338.697,312.825,336.402,307.731,332.342,303.989z M304.792,315.824l-8.297-8.673l10.324-10.324l8.842,8.128L304.792,315.824z
-           M174.017,166.536c-0.01,0.011-0.022,0.018-0.032,0.029s-0.016,0.024-0.026,0.035L53.196,297.976l-9.782-9.781l155.549-148.797
-          L174.017,166.536z M36.94,315.661l-10.872-10.872l8.673-8.297l10.327,10.327L36.94,315.661z M139.41,142.939l19.629,18.044
-          l-1.237,1.183L139.41,142.939z M17.444,324.45c-1.545-1.545-2.384-3.601-2.362-5.787c0.022-2.111,0.85-4.079,2.321-5.569
-          l11.395,11.395c-1.516,1.495-3.504,2.323-5.652,2.323C20.992,326.812,18.967,325.973,17.444,324.45z M178.762,179.107
-          l119.215,109.591l-9.779,9.779L176.432,181.641L178.762,179.107z M324.449,324.454c-1.525,1.524-3.545,2.361-5.697,2.361
-          c-0.028,0-0.057,0-0.086,0c-2.111-0.022-4.078-0.852-5.569-2.324l11.392-11.392c1.453,1.472,2.279,3.401,2.321,5.484
-          C326.857,320.799,326.018,322.885,324.449,324.454z" />
-            </svg>
-            <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">BCM</span>
-          </a>
-          <div class="mt-6 lg:max-w-sm">
-            <p class="text-sm text-gray-500 font-mono">
-              BCM vise à offrir une plateforme complète pour la gestion efficace des clubs, des clients, des défis, des
-              tournois, et des actualités liées au billard.
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <span class="text-base font-bold tracking-wide text-gray-100">Social</span>
-          <div class="flex items-center mt-1 space-x-3">
-            <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-green-800">
-              <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
-                <path
-                  d="M24,4.6c-0.9,0.4-1.8,0.7-2.8,0.8c1-0.6,1.8-1.6,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-1-2.2-1.6-3.6-1.6 c-2.7,0-4.9,2.2-4.9,4.9c0,0.4,0,0.8,0.1,1.1C7.7,8.1,4.1,6.1,1.7,3.1C1.2,3.9,1,4.7,1,5.6c0,1.7,0.9,3.2,2.2,4.1 C2.4,9.7,1.6,9.5,1,9.1c0,0,0,0,0,0.1c0,2.4,1.7,4.4,3.9,4.8c-0.4,0.1-0.8,0.2-1.3,0.2c-0.3,0-0.6,0-0.9-0.1c0.6,2,2.4,3.4,4.6,3.4 c-1.7,1.3-3.8,2.1-6.1,2.1c-0.4,0-0.8,0-1.2-0.1c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14-7.5,14-14c0-0.2,0-0.4,0-0.6 C22.5,6.4,23.3,5.5,24,4.6z">
-                </path>
-              </svg>
-            </a>
-            <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-green-800">
-              <svg viewBox="0 0 30 30" fill="currentColor" class="h-6">
-                <circle cx="15" cy="15" r="4"></circle>
-                <path
-                  d="M19.999,3h-10C6.14,3,3,6.141,3,10.001v10C3,23.86,6.141,27,10.001,27h10C23.86,27,27,23.859,27,19.999v-10   C27,6.14,23.859,3,19.999,3z M15,21c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S18.309,21,15,21z M22,9c-0.552,0-1-0.448-1-1   c0-0.552,0.448-1,1-1s1,0.448,1,1C23,8.552,22.552,9,22,9z">
-                </path>
-              </svg>
-            </a>
-            <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-green-900">
-              <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
-                <path
-                  d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z">
-                </path>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-col-reverse justify-center pt-5 pb-10 border-t lg:flex-row">
-        <p class="text-sm text-gray-600">
-          © Copyright 2024. All rights reserved.
-        </p>
-
-      </div>
-    </div>
-  </div>
+  <app-footer/>
