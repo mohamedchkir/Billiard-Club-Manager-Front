@@ -14,6 +14,9 @@ import {ClubEffects} from './core/state/club/club.effects';
 import {HttpClientModule, provideHttpClient, withFetch} from "@angular/common/http";
 import {clubFeature, clubFeatureKey} from "./core/state/club/club.reducer";
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { FooterComponent } from './view/component/footer/footer.component';
+import { SearchComponent } from './view/component/search/search.component';
+import { NavbarComponent } from './view/component/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     ClubComponent,
     LoginComponent,
     RegisterComponent,
-    PlayerComponent
+    PlayerComponent,
+    FooterComponent,
+    SearchComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
