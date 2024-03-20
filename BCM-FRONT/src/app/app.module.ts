@@ -18,6 +18,8 @@ import { FooterComponent } from './view/component/footer/footer.component';
 import { SearchComponent } from './view/component/search/search.component';
 import { NavbarComponent } from './view/component/navbar/navbar.component';
 import { StatisticComponent } from './view/component/statistic/statistic.component';
+import { PlayerEffects } from './core/state/player/player.effects';
+import {playerFeature} from "./core/state/player/player.reducer";
 
 @NgModule({
   declarations: [
@@ -38,11 +40,12 @@ import { StatisticComponent } from './view/component/statistic/statistic.compone
     StoreModule.forRoot({}, {}),
     EffectsModule.forRoot([]),
     StoreModule.forFeature(clubFeature),
-    EffectsModule.forFeature([ClubEffects]),
+    StoreModule.forFeature(playerFeature),
+    EffectsModule.forFeature([ClubEffects, PlayerEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   providers: [
-    provideHttpClient(withFetch())
+    provideHttpClient()
 
   ],
   bootstrap: [AppComponent]

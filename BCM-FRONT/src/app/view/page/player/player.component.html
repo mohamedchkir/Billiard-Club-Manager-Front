@@ -25,16 +25,15 @@
 <div class="bg-gray-950">
   <div
     class="px-4 py-1 border-y border-gray-400 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
-    <div class="grid gap-8 lg:grid-cols-4 sm:max-w-sm sm:mx-auto lg:max-w-full">
-      <div class="flex border-b pb-4 border-gray-700">
+    <div class="grid gap-8 lg:grid-cols-4 sm:max-w-sm sm:mx-auto lg:max-w-full " *ngIf="(players$ | async) as players">
+      <div class="flex border-b pb-4 border-gray-700" *ngFor="let player of players">
         <img class="object-cover w-20 h-20 mr-4 rounded-full shadow"
           src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
           alt="Person" />
         <div class="flex flex-col justify-center">
-          <p class="text-lg font-bold text-white font-mono">Oliver Aguilerra</p>
+          <p class="text-lg font-bold text-white font-mono"> {{player.firstName}}  {{player.lastName}}</p>
           <p class="flex text-center text-sm">
-            <svg version="1.1" class="w-4 h-5 " id="Capa_1" fill="#FFFFFF"xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 395.71 395.71" xml:space="preserve">
+            <svg class="w-4 h-5 " id="" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 395.71 395.71">
               <g>
                 <path d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738
   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388
@@ -42,7 +41,7 @@
   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
               </g>
             </svg>
-            <span class="text-white">Marrakech</span>
+            <span class="text-white">{{player.city.name}}</span>
           </p>
         </div>
       </div>
