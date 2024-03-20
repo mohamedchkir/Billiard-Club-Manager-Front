@@ -12,7 +12,7 @@ export interface State {
 
 export const initialState: State = {
   clubs: [],
-  error: null
+  error: null,
 };
 
 export const reducer = createReducer(

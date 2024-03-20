@@ -22,4 +22,5 @@ export class PlayerComponent implements OnInit{
     this.error$ = this.store.pipe(select(selectError)) as Observable<SimpleErrorResponse>;
   }
 
+
 }

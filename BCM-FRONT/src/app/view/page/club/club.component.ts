@@ -13,7 +13,7 @@ import {selectClubs, selectError} from "../../../core/state/club/club.selectors"
 })
 export class ClubComponent implements OnInit{
   clubs$!: Observable<ClubResponseDto[]>;
-  error$!: Observable<SimpleErrorResponse> ;
+  error$!: Observable<SimpleErrorResponse>;
 
   constructor( private store :Store) {
   }

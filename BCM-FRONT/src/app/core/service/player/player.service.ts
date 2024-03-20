@@ -9,8 +9,13 @@ import {UserSimpleResponseDto} from "../../model/UserSimpleResponseDto";
 })
 export class PlayerService {
   private playerUrl = 'http://localhost:8888/api/v1/user';
+  private searchUrl = 'http://localhost:8888/api/v1/user/search';
   getAllPlayers(): Observable<UserSimpleResponseDto[]> {
     return this.http.get<UserSimpleResponseDto[]>(this.playerUrl);
+  }
+
+  searchPlayers(word: string, cityId: number): Observable<UserSimpleResponseDto[]> {
+    return this.http.get<UserSimpleResponseDto[]>(this.searchUrl, {params: {word, cityId: cityId.toString()}});
   }
 
   constructor(private http: HttpClient) { }

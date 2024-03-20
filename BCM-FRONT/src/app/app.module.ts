@@ -20,6 +20,7 @@ import { NavbarComponent } from './view/component/navbar/navbar.component';
 import { StatisticComponent } from './view/component/statistic/statistic.component';
 import { PlayerEffects } from './core/state/player/player.effects';
 import {playerFeature} from "./core/state/player/player.reducer";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {playerFeature} from "./core/state/player/player.reducer";
     StoreModule.forFeature(clubFeature),
     StoreModule.forFeature(playerFeature),
     EffectsModule.forFeature([ClubEffects, PlayerEffects]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
+    StoreDevtoolsModule.instrument({maxAge: 25, logOnly: !isDevMode()}),
+    FormsModule
   ],
   providers: [
     provideHttpClient()

@@ -20,6 +20,17 @@ export class PlayerEffects {
     );
   });
 
+  searchPlayers$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(PlayerActions.searchPlayers),
+      concatMap((action) =>
+        this.playerService.searchPlayers(action.search, action.cityId).pipe(
+          map(players => PlayerActions.loadAllPlayersSuccess({ players })),
+          catchError(error => of(PlayerActions.loadAllPlayersFailure({ error }))))
+      )
+    );
+  });
+
 
   constructor(private actions$: Actions,
               private playerService: PlayerService
