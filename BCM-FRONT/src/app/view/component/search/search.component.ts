@@ -9,5 +9,8 @@ import {Store} from "@ngrx/store";
 export class SearchComponent {
   constructor(private store: Store) {
   }
+onSearch(firstName: string, cityId: number) {
+  }
+
 
 }

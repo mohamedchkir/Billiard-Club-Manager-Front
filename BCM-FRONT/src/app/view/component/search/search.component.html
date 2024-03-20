@@ -1,7 +1,7 @@
 <div class=" w-screen max-w-screen-md">
   <div class="flex flex-col">
     <div class="rounded-xl bg-gray-950 p-6 shadow-lg">
-      <form>
+      <form (ngSubmit)="onSearch(firstName.value, city.value)">
 
         <div class="flex justify-between gap-4">
           <div class="relative  w-full flex items-center justify-between rounded-md">

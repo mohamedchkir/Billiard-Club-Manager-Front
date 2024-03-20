@@ -21,6 +21,7 @@ import { StatisticComponent } from './view/component/statistic/statistic.compone
 import { PlayerEffects } from './core/state/player/player.effects';
 import {playerFeature} from "./core/state/player/player.reducer";
 import {FormsModule} from "@angular/forms";
+import { CityEffects } from './core/state/city/city.effects';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import {FormsModule} from "@angular/forms";
     EffectsModule.forRoot([]),
     StoreModule.forFeature(clubFeature),
     StoreModule.forFeature(playerFeature),
-    EffectsModule.forFeature([ClubEffects, PlayerEffects]),
+    EffectsModule.forFeature([ClubEffects, PlayerEffects, CityEffects]),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: !isDevMode()}),
     FormsModule
   ],
