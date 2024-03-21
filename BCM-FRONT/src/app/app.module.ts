@@ -25,6 +25,7 @@ import { CityEffects } from './core/state/city/city.effects';
 import {cityFeature} from "./core/state/city/city.reducer";
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {MatPaginator, MatPaginatorModule} from "@angular/material/paginator";
+import { DashboardComponent } from './view/page/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {MatPaginator, MatPaginatorModule} from "@angular/material/paginator";
     FooterComponent,
     SearchComponent,
     NavbarComponent,
-    StatisticComponent
+    StatisticComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

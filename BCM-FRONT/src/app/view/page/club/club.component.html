@@ -95,7 +95,7 @@
 
     </div>
     <mat-paginator #paginator
-                   [pageSizeOptions]="[1, 5, 10, 20]"
+                   [pageSizeOptions]="[5, 10, 20]"
                    (page)="handlePageEvent($event)"
                    [length]="pageEvent.length"
                    [pageSize]="pageEvent.pageSize"
