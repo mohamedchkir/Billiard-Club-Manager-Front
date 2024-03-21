@@ -4,6 +4,10 @@ import {select, Store} from "@ngrx/store";
 import {ClubActions} from "../../../core/state/club/club.actions";
 import {selectClubError, selectClubPageable} from "../../../core/state/club/club.selectors";
 import {PageEvent} from "@angular/material/paginator";
+import {Observable} from "rxjs";
+import {CityResponseDto} from "../../../core/model/CityResponseDto";
+import {selectCities} from "../../../core/state/city/city.selectors";
+import {CityActions} from "../../../core/state/city/city.actions";
 
 @Component({
   selector: 'app-club',
@@ -20,11 +24,15 @@ export class ClubComponent implements OnInit {
   clubs: ClubResponseDto[] = [];
   pageable$ = this.store.pipe(select(selectClubPageable));
   error$ = this.store.pipe(select(selectClubError));
+  cities$!: Observable<CityResponseDto[]>;
+
 
   constructor(private store: Store) {
   }
 
+
   ngOnInit(): void {
+    this.store.dispatch(CityActions.loadAllCities());
     this.store.dispatch(ClubActions.loadAllClubs({page: this.pageEvent.pageIndex, size: this.pageEvent.pageSize}));
     this.pageable$.subscribe(
       pageable => {
@@ -32,6 +40,7 @@ export class ClubComponent implements OnInit {
         this.clubs = pageable.content;
       }
     );
+    this.cities$ = this.store.pipe(select(selectCities));
   }
 
   handlePageEvent(e: PageEvent) {
@@ -41,6 +50,11 @@ export class ClubComponent implements OnInit {
       page: this.pageEvent.pageIndex,
       size: this.pageEvent.pageSize
     }));
+  }
+
+  onSearch(name: string, cityId: string) {
+    this.store.dispatch(ClubActions.searchClubs({name, cityId, page: this.pageEvent.pageIndex, size: this.pageEvent.pageSize}));
+
   }
 
 }

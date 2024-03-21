@@ -9,6 +9,7 @@ export interface ClubResponseDto {
   openingHour: Date;
   closeHour: Date;
   numberOfToken: number;
+  imageUrl: string;
   city: CityResponseDto;
   services: ServiceResponseDto[];
 }

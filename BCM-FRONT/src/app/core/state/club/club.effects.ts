@@ -19,6 +19,17 @@ export class ClubEffects {
     );
   });
 
+  searchClubs$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(ClubActions.searchClubs),
+      concatMap((action) =>
+        this.clubService.searchClubs(action.name, action.cityId, action.page, action.size).pipe(
+          map(clubs => ClubActions.loadAllClubsSuccess({ clubs})),
+          catchError(error => of(ClubActions.loadAllClubsFailure({ error }))))
+      )
+    );
+  });
+
   constructor(
     private actions$: Actions,
     private clubService: ClubService

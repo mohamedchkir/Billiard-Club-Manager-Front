@@ -18,5 +18,16 @@ export class ClubService {
     });
   }
 
+  searchClubs(name: string, cityId: string, page: number, size: number): Observable<ClubPageableResponse> {
+    return this.http.get<ClubPageableResponse>(`${this.clubsUrl}/search`, {
+      params: {
+        name,
+        cityId,
+        page: page.toString(),
+        size: size.toString()
+      }
+    });
+  }
+
   constructor(private http: HttpClient) { }
 }

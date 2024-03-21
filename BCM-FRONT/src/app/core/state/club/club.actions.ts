@@ -8,6 +8,7 @@ export const ClubActions = createActionGroup({
   events: {
     loadAllClubs: props<{ page: number, size: number }>(),
     loadAllClubsSuccess: props<{ clubs: ClubPageableResponse }>(),
-    loadAllClubsFailure: props<{ error: SimpleErrorResponse }>()
+    loadAllClubsFailure: props<{ error: SimpleErrorResponse }>(),
+    searchClubs: props<{ name: string, cityId: string, page: number, size: number }>(),
   }
 });
