@@ -9,3 +9,8 @@ export const selectCities = createSelector(
   selectCityState,
   (state) => state.cities
 );
+
+export const selectError = createSelector(
+  selectCityState,
+  (state) => state.error
+);

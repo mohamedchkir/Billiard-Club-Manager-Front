@@ -15,11 +15,11 @@
                    class=" font-mono h-12 w-full cursor-text rounded-md border border-gray-100 bg-gray-100 py-4 pr-40 pl-12 shadow-sm outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                    placeholder="Search by name" />
           </div>
-          <div class="flex flex-col">
+          <div  class="flex flex-col">
             <select #city id="city"
                     class=" block w-full font-mono rounded-md border overflow-auto border-gray-100 bg-gray-100 px-2 py-3 shadow-sm outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
               <option value="">City</option>
-              <option>New York</option>
+              <option *ngFor="let city of cities$ | async" [value]="city.id">{{city.name}}</option>
             </select>
           </div>
 

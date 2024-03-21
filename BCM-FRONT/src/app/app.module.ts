@@ -22,6 +22,9 @@ import { PlayerEffects } from './core/state/player/player.effects';
 import {playerFeature} from "./core/state/player/player.reducer";
 import {FormsModule} from "@angular/forms";
 import { CityEffects } from './core/state/city/city.effects';
+import {cityFeature} from "./core/state/city/city.reducer";
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {MatPaginator, MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [
@@ -43,12 +46,15 @@ import { CityEffects } from './core/state/city/city.effects';
     EffectsModule.forRoot([]),
     StoreModule.forFeature(clubFeature),
     StoreModule.forFeature(playerFeature),
+    StoreModule.forFeature(cityFeature),
     EffectsModule.forFeature([ClubEffects, PlayerEffects, CityEffects]),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: !isDevMode()}),
-    FormsModule
+    FormsModule,
+    MatPaginatorModule
   ],
   providers: [
-    provideHttpClient()
+    provideHttpClient(),
+    provideAnimationsAsync()
 
   ],
   bootstrap: [AppComponent]

@@ -11,8 +11,8 @@ export class ClubEffects {
   loadClubs$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(ClubActions.loadAllClubs), // Adjust action name to match
-      concatMap(() =>
-        this.clubService.getAllClubs().pipe(
+      concatMap((action) =>
+        this.clubService.getAllClubs(action.page, action.size).pipe(
           map(clubs => ClubActions.loadAllClubsSuccess({ clubs})),
           catchError(error => of(ClubActions.loadAllClubsFailure({ error }))))
       )

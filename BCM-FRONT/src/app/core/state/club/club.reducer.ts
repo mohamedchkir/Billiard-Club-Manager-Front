@@ -2,24 +2,41 @@ import { createFeature, createReducer, on } from '@ngrx/store';
 import { ClubActions } from './club.actions';
 import {ClubResponseDto} from "../../model/ClubResponseDto";
 import {SimpleErrorResponse} from "../../model/SimpleErrorResponse";
+import {ClubPageableResponse} from "../../model/ClubPageableResponse";
 
 export const clubFeatureKey = 'club';
 
 export interface State {
-  clubs: ClubResponseDto[]; // Define your state shape here
+  pageable: ClubPageableResponse;
   error: SimpleErrorResponse | null;
 }
 
 export const initialState: State = {
-  clubs: [],
+  pageable: {
+    content: [],
+    totalPages: 0,
+    totalElements: 0,
+    last: false,
+    size: 0,
+    number: 0,
+    first: false,
+    numberOfElements: 0,
+    empty: false
+  },
   error: null,
 };
 
 export const reducer = createReducer(
   initialState,
-  on(ClubActions.loadAllClubsSuccess, (state, { clubs }) => ({ ...state, clubs })),
-  on(ClubActions.loadAllClubsFailure, (state, { error }) => ({ ...state, error })),
-  on(ClubActions.loadAllClubs, (state) => ({ ...state, clubs: [], error: null }))
+  on(ClubActions.loadAllClubsSuccess, (state, { clubs }) => ({
+    ...state,
+    pageable: clubs
+  })),
+  on(ClubActions.loadAllClubsFailure, (state, { error }) => ({
+    ...state,
+    error: error
+  })),
+  on(ClubActions.loadAllClubs, (state) => state)
 );
 
 export const clubFeature = createFeature({
