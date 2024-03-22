@@ -29,5 +29,9 @@ export class ClubService {
     });
   }
 
+  deleteClub(id: number): Observable<any> {
+    return this.http.delete(`${this.clubsUrl}/${id}`);
+  }
+
   constructor(private http: HttpClient) { }
 }

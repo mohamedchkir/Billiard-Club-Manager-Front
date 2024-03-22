@@ -30,6 +30,17 @@ export class ClubEffects {
     );
   });
 
+  deleteClub$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(ClubActions.deleteClub),
+      concatMap((action) =>
+        this.clubService.deleteClub(action.id).pipe(
+          map(() => ClubActions.deleteClubSuccess({ id: action.id })),
+          catchError(error => of(ClubActions.deleteClubFailure({ error }))))
+      )
+    );
+  });
+
   constructor(
     private actions$: Actions,
     private clubService: ClubService

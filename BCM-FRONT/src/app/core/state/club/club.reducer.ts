@@ -36,8 +36,26 @@ export const reducer = createReducer(
     ...state,
     error: error
   })),
-  on(ClubActions.loadAllClubs, (state) => state)
+  on(ClubActions.loadAllClubs, (state) => state),
+
+  on(ClubActions.deleteClubSuccess, (state, { id }) => ({
+    ...state,
+    pageable: {
+      ...state.pageable,
+      content: state.pageable.content.filter(club => club.id !== id)
+
+    }
+  })),
+  on(ClubActions.deleteClubFailure, (state, { error }) => ({
+    ...state,
+    error: error
+  })),
+  on(ClubActions.deleteClub, (state) => state),
+
 );
+
+
+
 
 export const clubFeature = createFeature({
   name: clubFeatureKey,
