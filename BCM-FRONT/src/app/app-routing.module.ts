@@ -7,6 +7,7 @@ import {RegisterComponent} from './view/page/register/register.component';
 import {PlayerComponent} from './view/page/player/player.component';
 import {DashboardComponent} from "./view/page/dashboard/dashboard.component";
 import {StatisticComponent} from "./view/component/statistic/statistic.component";
+import {UserDashComponent} from "./view/component/user-dash/user-dash.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
 
   {path: 'dashboard', component: DashboardComponent, children: [
       {path: '', component: StatisticComponent},
+      {path: 'user', component: UserDashComponent}
     ]}
 ];
 

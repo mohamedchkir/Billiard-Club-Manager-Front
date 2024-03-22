@@ -26,6 +26,21 @@ import {cityFeature} from "./core/state/city/city.reducer";
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {MatPaginator, MatPaginatorModule} from "@angular/material/paginator";
 import { DashboardComponent } from './view/page/dashboard/dashboard.component';
+import { UserDashComponent } from './view/component/user-dash/user-dash.component';
+import {
+  MatCell, MatCellDef,
+  MatColumnDef,
+  MatHeaderCell,
+  MatHeaderCellDef,
+  MatHeaderRow, MatHeaderRowDef,
+  MatRow, MatRowDef,
+  MatTable
+} from "@angular/material/table";
+import {MatFormField} from "@angular/material/form-field";
+import {MatOption} from "@angular/material/autocomplete";
+import {MatSelect} from "@angular/material/select";
+import {MatButton, MatIconButton} from "@angular/material/button";
+import {MatIcon} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -39,7 +54,8 @@ import { DashboardComponent } from './view/page/dashboard/dashboard.component';
     SearchComponent,
     NavbarComponent,
     StatisticComponent,
-    DashboardComponent
+    DashboardComponent,
+    UserDashComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +68,23 @@ import { DashboardComponent } from './view/page/dashboard/dashboard.component';
     EffectsModule.forFeature([ClubEffects, PlayerEffects, CityEffects]),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: !isDevMode()}),
     FormsModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatHeaderRow,
+    MatRow,
+    MatHeaderCell,
+    MatCell,
+    MatColumnDef,
+    MatTable,
+    MatHeaderCellDef,
+    MatCellDef,
+    MatHeaderRowDef,
+    MatRowDef,
+    MatFormField,
+    MatOption,
+    MatSelect,
+    MatButton,
+    MatIcon,
+    MatIconButton,
   ],
   providers: [
     provideHttpClient(),
