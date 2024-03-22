@@ -48,6 +48,7 @@ import {MatDialogContent, MatDialogTitle} from "@angular/material/dialog";
 import {MatDivider} from "@angular/material/divider";
 import {MatInput} from "@angular/material/input";
 import {MatCheckbox} from "@angular/material/checkbox";
+import { CityDashComponent } from './view/component/city-dash/city-dash.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import {MatCheckbox} from "@angular/material/checkbox";
     DashboardComponent,
     UserDashComponent,
     ClubDashComponent,
-    ClubAddDialogComponent
+    ClubAddDialogComponent,
+    CityDashComponent
   ],
   imports: [
     BrowserModule,
