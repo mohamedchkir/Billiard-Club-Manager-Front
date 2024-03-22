@@ -9,6 +9,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import {ClubPageableResponse} from "../../../core/model/ClubPageableResponse";
 import {MatDialog} from "@angular/material/dialog";
 import {ClubAddDialogComponent} from "../club-add-dialog/club-add-dialog.component";
+import {PageEvent} from "@angular/material/paginator";
 
 @Component({
   selector: 'app-club-dash',
@@ -26,8 +27,8 @@ export class ClubDashComponent implements OnInit{
     pageable :Observable<ClubPageableResponse> |null = this.store.pipe(select(selectClubPageable));
     error$ = this.store.pipe(select(selectClubs));
     dataSource = new MatTableDataSource<ClubResponseDto>();
-
     displayedColumns: string[] = ['No','imageUrl','name', 'address','openingHour','closeHour','description','numberOfToken','city','services','actions'];
+
 
     constructor(private store: Store,
                 private dialog:MatDialog) {}
@@ -38,13 +39,21 @@ export class ClubDashComponent implements OnInit{
             pageable => {
                 this.pageEvent.length = pageable.totalElements;
                 this.clubs = pageable.content;
-                this.dataSource.data = new MatTableDataSource<ClubResponseDto>(this.clubs).data;
+                this.dataSource = new MatTableDataSource(this.clubs);
             },
             error => {
                 console.log(error);
             }
         );
     }
+  handlePageEvent(e: PageEvent) {
+    this.pageEvent.pageSize = e.pageSize;
+    this.pageEvent.pageIndex = e.pageIndex;
+    this.store.dispatch(ClubActions.loadAllClubs({
+      page: this.pageEvent.pageIndex,
+      size: this.pageEvent.pageSize
+    }));
+  }
 
     deleteClub(id: number) {
         this.store.dispatch(ClubActions.deleteClub({id}));

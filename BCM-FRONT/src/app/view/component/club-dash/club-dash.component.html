@@ -84,8 +84,14 @@
     <tr mat-row *matRowDef="let club; columns: displayedColumns;"></tr>
   </table>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+  <mat-paginator #paginator
+                 [pageSizeOptions]="[5, 10, 20]"
+                 (page)="handlePageEvent($event)"
+                 [length]="pageEvent.length"
+                 [pageSize]="pageEvent.pageSize"
+                 [pageIndex]="pageEvent.pageIndex"
                  showFirstLastButtons
-                 aria-label="Select page of clubs">
+                 aria-label="Select page">
   </mat-paginator>
+
 </div>
