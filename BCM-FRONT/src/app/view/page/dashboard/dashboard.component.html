@@ -1,0 +1,171 @@
+<!-- This is an example component -->
+<div>
+
+  <nav class="bg-gray-950  fixed z-30 w-full border-gray-600 border-b-2">
+    <div class="px-3 py-3 lg:px-5 lg:pl-3">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center justify-start">
+          <button id="toggleSidebarMobile" aria-expanded="true" aria-controls="sidebar"
+                  class="lg:hidden mr-2 text-gray-600 hover:text-gray-900 cursor-pointer p-2 hover:bg-gray-100 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100 rounded">
+            <svg id="toggleSidebarMobileHamburger" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                    clip-rule="evenodd"></path>
+            </svg>
+            <svg id="toggleSidebarMobileClose" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 20 20"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+            </svg>
+          </button>
+          <a href="/" aria-label="BCM" title="BCM" class="inline-flex items-center lg:mx-auto">
+            <svg class="w-8 " fill="#2e7d32" id="" xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 338.814 338.814">
+              <path d="M332.342,303.989l-145.46-133.717L334.151,10.061c2.192-2.385,2.096-6.078-0.217-8.345c-2.313-2.267-6.009-2.29-8.348-0.051
+	L167.729,152.67L10.062,7.739C7.677,5.547,3.983,5.643,1.717,7.956c-2.267,2.313-2.29,6.007-0.051,8.348l147.466,154.157
+	L9.25,304.271c-3.922,3.765-6.113,8.833-6.168,14.27c-0.056,5.437,2.031,10.549,5.876,14.395c3.791,3.79,8.829,5.877,14.188,5.877
+	c5.587,0,10.963-2.354,14.758-6.467l130.391-141.851l135.978,142.147c3.766,3.924,8.834,6.117,14.27,6.173
+	c0.071,0,0.143,0.001,0.214,0.001c5.356,0,10.384-2.082,14.179-5.876c3.9-3.901,5.986-9.086,5.874-14.602
+	C338.697,312.825,336.402,307.731,332.342,303.989z M304.792,315.824l-8.297-8.673l10.324-10.324l8.842,8.128L304.792,315.824z
+	 M174.017,166.536c-0.01,0.011-0.022,0.018-0.032,0.029s-0.016,0.024-0.026,0.035L53.196,297.976l-9.782-9.781l155.549-148.797
+	L174.017,166.536z M36.94,315.661l-10.872-10.872l8.673-8.297l10.327,10.327L36.94,315.661z M139.41,142.939l19.629,18.044
+	l-1.237,1.183L139.41,142.939z M17.444,324.45c-1.545-1.545-2.384-3.601-2.362-5.787c0.022-2.111,0.85-4.079,2.321-5.569
+	l11.395,11.395c-1.516,1.495-3.504,2.323-5.652,2.323C20.992,326.812,18.967,325.973,17.444,324.45z M178.762,179.107
+	l119.215,109.591l-9.779,9.779L176.432,181.641L178.762,179.107z M324.449,324.454c-1.525,1.524-3.545,2.361-5.697,2.361
+	c-0.028,0-0.057,0-0.086,0c-2.111-0.022-4.078-0.852-5.569-2.324l11.392-11.392c1.453,1.472,2.279,3.401,2.321,5.484
+	C326.857,320.799,326.018,322.885,324.449,324.454z"/>
+            </svg>
+            <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase font-mono ">BCM</span>
+          </a>
+        </div>
+
+        <!--        <div class="flex items-center">-->
+        <!--          <div class="flex items-center  relative">-->
+        <!--            <button type="button"  class="flex  rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false" data-dropdown-toggle="dropdown-user">-->
+        <!--              <span class="sr-only">Open user menu</span>-->
+
+        <!--              <img class="w-14 h-10 rounded-full" src="../../../assets/p_pictures/marques.jpg" alt="photo">-->
+        <!--            </button>-->
+        <!--            &lt;!&ndash; Dropdown menu  &ndash;&gt;-->
+        <!--            <div   class="absolute w-56  z-50 mt-2 text-base list-none  bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 left-0 top-full right-20 md:left-auto md:right-0">-->
+        <!--              <div class="px-4 py-3 ">-->
+        <!--                <span class="block text-sm text-gray-900  dark:text-white">Marquess Brownlee</span>-->
+        <!--                <span class="block text-sm text-gray-500 truncate dark:text-gray-400">Podcaster</span>-->
+        <!--              </div>-->
+        <!--              <ul>-->
+        <!--                <li><a routerLink="/dashboard" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a></li>-->
+        <!--                <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Profile</a></li>-->
+        <!--                <li><a routerLink="/settings" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a></li>-->
+        <!--                <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a></li>-->
+        <!--              </ul>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+      </div>
+    </div>
+  </nav>
+
+  <div class="flex overflow-hidden bg-gray-950 pt-16">
+    <aside id="sidebar"
+           class="fixed hidden border-r-2 border-gray-600 z-20 h-full top-0 left-0 pt-16 flex lg:flex flex-shrink-0 flex-col w-64 transition-width duration-75"
+           aria-label="Sidebar">
+      <div class="relative flex-1 flex flex-col min-h-0  pt-0">
+        <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+          <div class="flex-1 px-3 bg-gray-950 divide-y space-y-1">
+            <ul class="space-y-2 pb-2">
+              <li>
+                <a href="/dashboard"
+                   class="text-base text-gray-200 font-normal rounded-lg flex items-center p-2 hover:bg-gray-700 group">
+
+                  <svg class="w-6 h-6 text-gray-500 group-hover:text-gray-900 transition duration-75"
+                       viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <style>.a, .b {
+                        fill: none;
+                        stroke: #FFFF;
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-width: 1.5px;
+                      }
+
+                      .a {
+                        fill-rule: evenodd;
+                      }</style>
+                    </defs>
+                    <path class="a" d="M2,2V20a2,2,0,0,0,2,2H22"/>
+                    <rect class="b" height="6" rx="1.5" width="3" x="6" y="12"/>
+                    <rect class="b" height="6" rx="1.5" width="3" x="12" y="7"/>
+                    <rect class="b" height="6" rx="1.5" width="3" x="18" y="3"/>
+                  </svg>
+                  <span class="ml-3 text-white">Dashboard</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="/dashboard/user"
+                   class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-700 flex items-center p-2 group ">
+                  <svg class="w-6 h-6 text-gray-500 group-hover:text-gray-900 transition duration-75"
+                       viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="6" r="4" stroke="#FFFF" stroke-width="1.5"/>
+                    <path d="M18 9C19.6569 9 21 7.88071 21 6.5C21 5.11929 19.6569 4 18 4" stroke="#FFFF"
+                          stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M6 9C4.34315 9 3 7.88071 3 6.5C3 5.11929 4.34315 4 6 4" stroke="#FFFF" stroke-width="1.5"
+                          stroke-linecap="round"/>
+                    <path
+                      d="M17.1973 15C17.7078 15.5883 18 16.2714 18 17C18 19.2091 15.3137 21 12 21C8.68629 21 6 19.2091 6 17C6 14.7909 8.68629 13 12 13C12.3407 13 12.6748 13.0189 13 13.0553"
+                      stroke="#FFFF" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M20 19C21.7542 18.6153 23 17.6411 23 16.5C23 15.3589 21.7542 14.3847 20 14" stroke="#FFFF"
+                          stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M4 19C2.24575 18.6153 1 17.6411 1 16.5C1 15.3589 2.24575 14.3847 4 14" stroke="#FFFF"
+                          stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                  <span class="ml-3 flex-1 text-white whitespace-nowrap">Users</span>
+                </a>
+              </li>
+              <li>
+                <a href="/dashboard/club"
+                   class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-700 flex items-center p-2 group ">
+                  <svg class="w-6 h-6 text-gray-500 group-hover:text-gray-900 transition duration-75"
+                       viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M6 11.6825C9.31371 8.10583 14.6863 8.10583 18 11.6825M8.00002 13.841C10.2092 11.4566 13.7909 11.4566 16 13.841M10 16C11.1046 14.8078 12.8955 14.8078 14 16"
+                      stroke="#FFFF" stroke-width="1.5" stroke-linecap="round"/>
+                    <path
+                      d="M22 12.2039V13.725C22 17.6258 22 19.5763 20.8284 20.7881C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.7881C2 19.5763 2 17.6258 2 13.725V12.2039C2 9.91549 2 8.77128 2.5192 7.82274C3.0384 6.87421 3.98695 6.28551 5.88403 5.10813L7.88403 3.86687C9.88939 2.62229 10.8921 2 12 2C13.1079 2 14.1106 2.62229 16.116 3.86687L18.116 5.10812C20.0131 6.28551 20.9616 6.87421 21.4808 7.82274"
+                      stroke="#FFFF" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                  <span class="ml-3 flex-1 text-white whitespace-nowrap">Clubs</span>
+                </a>
+              </li>
+              <li>
+                <a href="/dashboard/table"
+                   class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-700 flex items-center p-2 group ">
+                  <svg class="w-6 h-6 text-gray-500 group-hover:text-gray-900 transition duration-75"
+                       viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <title>table</title>
+                    <path stroke="#FFFF"
+                          d="M18.76,6l2,4H3.24l2-4H18.76M20,4H4L1,10v2H3v7H5V16H19v3h2V12h2V10L20,4ZM5,14V12H19v2Z"/>
+                    <rect width="24" height="24" fill="none"/>
+                  </svg>
+                  <span class="ml-3 flex-1 text-white whitespace-nowrap">Tables</span>
+                </a>
+              </li>
+
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </aside>
+    <div class=" hidden flex inset-0 z-10" id="sidebarBackdrop"></div>
+    <div id="main-content" class="  mt-9 h-full w-full relative overflow-y-auto lg:ml-64">
+      <div class="px-4 py-4 lg:px-10 lg:py-20">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+
+  </div>
+
+</div>

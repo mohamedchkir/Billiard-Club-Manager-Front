@@ -7,6 +7,7 @@ export const PlayerActions = createActionGroup({
   events: {
     LoadAllPlayers: emptyProps(),
     LoadAllPlayersSuccess: props<{ players: UserSimpleResponseDto[] }>(),
-    LoadAllPlayersFailure: props<{ error: SimpleErrorResponse }>()
+    LoadAllPlayersFailure: props<{ error: SimpleErrorResponse }>(),
+    SearchPlayers: props<{ search: string,cityId: number }>(),
   }
 });

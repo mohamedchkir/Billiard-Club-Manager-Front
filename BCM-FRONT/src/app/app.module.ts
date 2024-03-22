@@ -20,6 +20,27 @@ import { NavbarComponent } from './view/component/navbar/navbar.component';
 import { StatisticComponent } from './view/component/statistic/statistic.component';
 import { PlayerEffects } from './core/state/player/player.effects';
 import {playerFeature} from "./core/state/player/player.reducer";
+import {FormsModule} from "@angular/forms";
+import { CityEffects } from './core/state/city/city.effects';
+import {cityFeature} from "./core/state/city/city.reducer";
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {MatPaginator, MatPaginatorModule} from "@angular/material/paginator";
+import { DashboardComponent } from './view/page/dashboard/dashboard.component';
+import { UserDashComponent } from './view/component/user-dash/user-dash.component';
+import {
+  MatCell, MatCellDef,
+  MatColumnDef,
+  MatHeaderCell,
+  MatHeaderCellDef,
+  MatHeaderRow, MatHeaderRowDef,
+  MatRow, MatRowDef,
+  MatTable
+} from "@angular/material/table";
+import {MatFormField} from "@angular/material/form-field";
+import {MatOption} from "@angular/material/autocomplete";
+import {MatSelect} from "@angular/material/select";
+import {MatButton, MatIconButton} from "@angular/material/button";
+import {MatIcon} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -32,7 +53,9 @@ import {playerFeature} from "./core/state/player/player.reducer";
     FooterComponent,
     SearchComponent,
     NavbarComponent,
-    StatisticComponent
+    StatisticComponent,
+    DashboardComponent,
+    UserDashComponent
   ],
   imports: [
     BrowserModule,
@@ -41,11 +64,31 @@ import {playerFeature} from "./core/state/player/player.reducer";
     EffectsModule.forRoot([]),
     StoreModule.forFeature(clubFeature),
     StoreModule.forFeature(playerFeature),
-    EffectsModule.forFeature([ClubEffects, PlayerEffects]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
+    StoreModule.forFeature(cityFeature),
+    EffectsModule.forFeature([ClubEffects, PlayerEffects, CityEffects]),
+    StoreDevtoolsModule.instrument({maxAge: 25, logOnly: !isDevMode()}),
+    FormsModule,
+    MatPaginatorModule,
+    MatHeaderRow,
+    MatRow,
+    MatHeaderCell,
+    MatCell,
+    MatColumnDef,
+    MatTable,
+    MatHeaderCellDef,
+    MatCellDef,
+    MatHeaderRowDef,
+    MatRowDef,
+    MatFormField,
+    MatOption,
+    MatSelect,
+    MatButton,
+    MatIcon,
+    MatIconButton,
   ],
   providers: [
-    provideHttpClient()
+    provideHttpClient(),
+    provideAnimationsAsync()
 
   ],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 <div class=" w-screen max-w-screen-md">
   <div class="flex flex-col">
     <div class="rounded-xl bg-gray-950 p-6 shadow-lg">
-      <form>
+      <form (ngSubmit)="onSearch(firstName.value, city.value)">
 
         <div class="flex justify-between gap-4">
           <div class="relative  w-full flex items-center justify-between rounded-md">
@@ -11,25 +11,15 @@
               <circle cx="11" cy="11" r="8" class=""></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65" class=""></line>
             </svg>
-            <input type="text" name="search"
+            <input #firstName type="text" name="search"
                    class=" font-mono h-12 w-full cursor-text rounded-md border border-gray-100 bg-gray-100 py-4 pr-40 pl-12 shadow-sm outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                    placeholder="Search by name" />
           </div>
-          <div class="flex flex-col">
-            <select id="city"
+          <div  class="flex flex-col">
+            <select #city id="city"
                     class=" block w-full font-mono rounded-md border overflow-auto border-gray-100 bg-gray-100 px-2 py-3 shadow-sm outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
               <option value="">City</option>
-              <option>New York</option>
-              <option>New York</option>
-              <option>New York</option>
-              <option>New York</option>
-              <option>New York</option>
-              <option>New York</option>
-              <option>New York</option>
-              <option>New York</option>
-              <option>New York</option>
-              <option>New York</option>
-              <option>New York</option>
+              <option *ngFor="let city of cities$ | async" [value]="city.id">{{city.name}}</option>
             </select>
           </div>
 

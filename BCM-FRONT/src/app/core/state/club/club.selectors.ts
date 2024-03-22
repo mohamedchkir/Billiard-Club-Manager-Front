@@ -5,12 +5,17 @@ export const selectClubState = createFeatureSelector<fromClub.State>(
   fromClub.clubFeatureKey
 );
 
-export const selectClubs = createSelector(
+export const selectClubPageable = createSelector(
   selectClubState,
-  (state) => state.clubs
+  (state) => state.pageable
 );
 
-export const selectError = createSelector(
+export const selectClubs = createSelector(
+  selectClubState,
+  (state) => state.pageable.content
+);
+
+export const selectClubError = createSelector(
   selectClubState,
   (state) => state.error
 );
