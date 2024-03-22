@@ -29,8 +29,8 @@ export class ClubService {
     });
   }
 
-  deleteClub(id: number): Observable<any> {
-    return this.http.delete(`${this.clubsUrl}/${id}`);
+  deleteClub(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.clubsUrl}/${id}`);
   }
 
   constructor(private http: HttpClient) { }

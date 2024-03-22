@@ -33,4 +33,8 @@ export class UserDashComponent implements OnInit {
       this.dataSource = new MatTableDataSource(users);
     });
   }
+
+  deleteUser(id: number) {
+    this.store.dispatch(PlayerActions.deletePlayer({id}));
+  }
 }
