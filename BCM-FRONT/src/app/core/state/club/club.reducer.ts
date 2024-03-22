@@ -52,6 +52,18 @@ export const reducer = createReducer(
   })),
   on(ClubActions.deleteClub, (state) => state),
 
+  on(ClubActions.addClubSuccess, (state, { club }) => ({
+    ...state,
+    pageable: {
+      ...state.pageable,
+      content: [...state.pageable.content, club]
+    }
+  })),
+  on(ClubActions.addClubFailure, (state, { error }) => ({
+    ...state,
+    error: error
+  })),
+  on(ClubActions.addClub, (state) => state),
 );
 
 

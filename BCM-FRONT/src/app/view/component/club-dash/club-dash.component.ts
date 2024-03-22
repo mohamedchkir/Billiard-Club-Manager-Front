@@ -8,6 +8,7 @@ import {SimpleErrorResponse} from "../../../core/model/SimpleErrorResponse";
 import { MatTableDataSource } from '@angular/material/table';
 import {ClubPageableResponse} from "../../../core/model/ClubPageableResponse";
 import {MatDialog} from "@angular/material/dialog";
+import {ClubAddDialogComponent} from "../club-add-dialog/club-add-dialog.component";
 
 @Component({
   selector: 'app-club-dash',
@@ -47,6 +48,10 @@ export class ClubDashComponent implements OnInit{
 
     deleteClub(id: number) {
         this.store.dispatch(ClubActions.deleteClub({id}));
+    }
+
+    openDialog() {
+        this.dialog.open(ClubAddDialogComponent);
     }
 
 }
