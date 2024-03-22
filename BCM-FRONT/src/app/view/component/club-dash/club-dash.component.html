@@ -1,0 +1,85 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource ">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="No">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef=" let i = index"> {{ i + 1 }} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let club"> {{club.name}}</td>
+    </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef> address </th>
+      <td mat-cell *matCellDef="let club">{{club.address}}  </td>
+    </ng-container>
+
+    <!-- Telephone Column -->
+    <ng-container matColumnDef="openingHour">
+      <th mat-header-cell *matHeaderCellDef> openingHour </th>
+      <td mat-cell *matCellDef="let club"> {{club.openingHour}}  </td>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="closeHour">
+      <th mat-header-cell *matHeaderCellDef> closeHour </th>
+      <td mat-cell *matCellDef="let club"> {{club.closeHour}}  </td>
+    </ng-container>
+
+    <!-- Role Column -->
+    <ng-container matColumnDef="numberOfToken">
+      <th mat-header-cell *matHeaderCellDef> numberOfToken </th>
+      <td mat-cell *matCellDef="let club"> {{ club.numberOfToken }} </td>
+    </ng-container>
+
+    <!-- Role Column -->
+    <ng-container matColumnDef="city">
+      <th mat-header-cell *matHeaderCellDef> City </th>
+      <td mat-cell *matCellDef="let club"> {{ club.city.name }} </td>
+    </ng-container>
+
+    <!-- Role Column -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> Description </th>
+      <td mat-cell *matCellDef="let club"> {{ club.description }} </td>
+    </ng-container>
+
+    <!-- Role Column -->
+    <ng-container matColumnDef="imageUrl">
+      <th mat-header-cell *matHeaderCellDef> Image </th>
+      <td mat-cell *matCellDef="let club"> <img [src]="club.imageUrl" alt="club image" class="rounded img-fluid p-2" style="width: 50px; height: 50px;"> </td>
+    </ng-container>
+    <!-- Role Column -->
+    <ng-container matColumnDef="services">
+      <th mat-header-cell *matHeaderCellDef> Services </th>
+      <td mat-cell *matCellDef="let club">
+        <button mat-button color="primary" class="rounded-pill m-1" *ngFor="let service of club.services">{{service.name}}</button>
+      </td>
+    </ng-container>
+
+    <!-- Role Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let club">
+        <button mat-icon-button color="primary">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteClub(club.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let club; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons
+                 aria-label="Select page of clubs">
+  </mat-paginator>
+</div>

@@ -41,6 +41,8 @@ import {MatOption} from "@angular/material/autocomplete";
 import {MatSelect} from "@angular/material/select";
 import {MatButton, MatIconButton} from "@angular/material/button";
 import {MatIcon} from "@angular/material/icon";
+import { ClubDashComponent } from './view/component/club-dash/club-dash.component';
+import {MatChip} from "@angular/material/chips";
 
 @NgModule({
   declarations: [
@@ -55,7 +57,8 @@ import {MatIcon} from "@angular/material/icon";
     NavbarComponent,
     StatisticComponent,
     DashboardComponent,
-    UserDashComponent
+    UserDashComponent,
+    ClubDashComponent
   ],
   imports: [
     BrowserModule,
@@ -85,6 +88,7 @@ import {MatIcon} from "@angular/material/icon";
     MatButton,
     MatIcon,
     MatIconButton,
+    MatChip,
   ],
   providers: [
     provideHttpClient(),
