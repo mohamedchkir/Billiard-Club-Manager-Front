@@ -14,3 +14,7 @@ export const selectError = createSelector(
   selectCityState,
   (state) => state.error
 );
+
+export const selectCityById = (id: number) =>
+  createSelector(selectCities, (cities) => cities.find((city) => city.id === id));
+
