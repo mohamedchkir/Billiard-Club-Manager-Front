@@ -12,6 +12,7 @@ import {ClubDashComponent} from "./view/component/club-dash/club-dash.component"
 import {CityDashComponent} from "./view/component/city-dash/city-dash.component";
 import {ServiceService} from "./core/service/service/service.service";
 import {ServiceDashComponent} from "./view/component/service-dash/service-dash.component";
+import {NewsComponent} from "./view/page/news/news.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'player', component: PlayerComponent},
+  {path: 'news', component: NewsComponent},
 
   {path: 'dashboard', component: DashboardComponent, children: [
       {path: '', component: StatisticComponent},

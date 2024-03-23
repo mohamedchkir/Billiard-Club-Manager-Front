@@ -52,6 +52,7 @@ import { CityDashComponent } from './view/component/city-dash/city-dash.componen
 import { ServiceEffects } from './core/state/service/service.effects';
 import { ServiceDashComponent } from './view/component/service-dash/service-dash.component';
 import {serviceFeature} from "./core/state/service/service.reducer";
+import { NewsComponent } from './view/page/news/news.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import {serviceFeature} from "./core/state/service/service.reducer";
     ClubDashComponent,
     ClubAddDialogComponent,
     CityDashComponent,
-    ServiceDashComponent
+    ServiceDashComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,

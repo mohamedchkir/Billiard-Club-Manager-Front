@@ -19,7 +19,7 @@ export class ClubComponent implements OnInit {
     pageIndex: number;
     pageSize: number;
     length: number;
-  } = {pageIndex: 0, pageSize: 1, length: 0};
+  } = {pageIndex: 0, pageSize: 5, length: 0};
 
   clubs: ClubResponseDto[] = [];
   pageable$ = this.store.pipe(select(selectClubPageable));
