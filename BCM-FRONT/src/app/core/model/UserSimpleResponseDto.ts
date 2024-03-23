@@ -9,4 +9,5 @@ export interface UserSimpleResponseDto {
   numberOfToken: number;
   city: CityResponseDto;
   role: string;
+  imageUrl: string;
 }

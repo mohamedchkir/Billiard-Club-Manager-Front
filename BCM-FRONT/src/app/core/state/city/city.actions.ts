@@ -7,6 +7,10 @@ export const CityActions = createActionGroup({
   events: {
     LoadAllCities: emptyProps(),
     LoadAllCitiesSuccess: props<{ cities: CityResponseDto[] }>(),
-    LoadAllCitiesFailure: props<{ error: SimpleErrorResponse }>()
+    LoadAllCitiesFailure: props<{ error: SimpleErrorResponse }>(),
+    DeleteCity: props<{ id: number }>(),
+    DeleteCitySuccess: props<{ id: number }>(),
+    DeleteCityFailure: props<{ error: SimpleErrorResponse }>()
+
   }
 });

@@ -20,7 +20,7 @@ import { NavbarComponent } from './view/component/navbar/navbar.component';
 import { StatisticComponent } from './view/component/statistic/statistic.component';
 import { PlayerEffects } from './core/state/player/player.effects';
 import {playerFeature} from "./core/state/player/player.reducer";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CityEffects } from './core/state/city/city.effects';
 import {cityFeature} from "./core/state/city/city.reducer";
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -41,6 +41,17 @@ import {MatOption} from "@angular/material/autocomplete";
 import {MatSelect} from "@angular/material/select";
 import {MatButton, MatIconButton} from "@angular/material/button";
 import {MatIcon} from "@angular/material/icon";
+import { ClubDashComponent } from './view/component/club-dash/club-dash.component';
+import {MatChip} from "@angular/material/chips";
+import { ClubAddDialogComponent } from './view/component/club-add-dialog/club-add-dialog.component';
+import {MatDialogContent, MatDialogTitle} from "@angular/material/dialog";
+import {MatDivider} from "@angular/material/divider";
+import {MatInput} from "@angular/material/input";
+import {MatCheckbox} from "@angular/material/checkbox";
+import { CityDashComponent } from './view/component/city-dash/city-dash.component';
+import { ServiceEffects } from './core/state/service/service.effects';
+import { ServiceDashComponent } from './view/component/service-dash/service-dash.component';
+import {serviceFeature} from "./core/state/service/service.reducer";
 
 @NgModule({
   declarations: [
@@ -55,7 +66,11 @@ import {MatIcon} from "@angular/material/icon";
     NavbarComponent,
     StatisticComponent,
     DashboardComponent,
-    UserDashComponent
+    UserDashComponent,
+    ClubDashComponent,
+    ClubAddDialogComponent,
+    CityDashComponent,
+    ServiceDashComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +80,8 @@ import {MatIcon} from "@angular/material/icon";
     StoreModule.forFeature(clubFeature),
     StoreModule.forFeature(playerFeature),
     StoreModule.forFeature(cityFeature),
-    EffectsModule.forFeature([ClubEffects, PlayerEffects, CityEffects]),
+    StoreModule.forFeature(serviceFeature),
+    EffectsModule.forFeature([ClubEffects, PlayerEffects, CityEffects, ServiceEffects]),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: !isDevMode()}),
     FormsModule,
     MatPaginatorModule,
@@ -85,6 +101,13 @@ import {MatIcon} from "@angular/material/icon";
     MatButton,
     MatIcon,
     MatIconButton,
+    MatChip,
+    MatDialogTitle,
+    MatDivider,
+    ReactiveFormsModule,
+    MatDialogContent,
+    MatInput,
+    MatCheckbox,
   ],
   providers: [
     provideHttpClient(),

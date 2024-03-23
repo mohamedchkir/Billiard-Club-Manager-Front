@@ -29,5 +29,14 @@ export class ClubService {
     });
   }
 
+  deleteClub(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.clubsUrl}/${id}`);
+  }
+
+  addClub(formData: FormData): Observable<ClubResponseDto> {
+    return this.http.post<ClubResponseDto>(this.clubsUrl, formData);
+  }
+
+
   constructor(private http: HttpClient) { }
 }

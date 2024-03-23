@@ -13,7 +13,7 @@ import {MatTableDataSource} from "@angular/material/table";
   styleUrls: ['./user-dash.component.css']
 })
 export class UserDashComponent implements OnInit {
-  displayedColumns: string[] = ['No','firstName', 'lastName', 'telephone', 'email', 'numberOfToken', 'city', 'role', 'actions'];
+  displayedColumns: string[] = ['No','imageUrl','firstName', 'lastName', 'telephone', 'email', 'numberOfToken', 'city', 'role', 'actions'];
 
 
 
@@ -32,5 +32,9 @@ export class UserDashComponent implements OnInit {
     this.users$.subscribe(users => {
       this.dataSource = new MatTableDataSource(users);
     });
+  }
+
+  deleteUser(id: number) {
+    this.store.dispatch(PlayerActions.deletePlayer({id}));
   }
 }

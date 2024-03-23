@@ -22,6 +22,20 @@ export class CityEffects {
   }
   );
 
+  deleteCity$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(CityActions.deleteCity),
+      concatMap(({id}) =>
+        this.cityService.deleteCity(id).pipe(
+          map(() => CityActions.deleteCitySuccess({id})),
+          catchError(error => of(CityActions.deleteCityFailure({error})))
+        )
+      )
+    );
+
+  }
+  );
+
 
   constructor(private actions$: Actions,
               private cityService: CityService) {}

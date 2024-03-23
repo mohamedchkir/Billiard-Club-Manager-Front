@@ -1,0 +1,36 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource ">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="No">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef=" let i = index"> {{ i + 1 }} </td>
+    </ng-container>
+
+    <!-- Role Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> City </th>
+      <td mat-cell *matCellDef="let city"> {{ city.name }} </td>
+    </ng-container>
+    <!-- Role Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let city">
+        <button mat-icon-button color="primary">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteCity(city.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let city; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of cities"
+                 [pageSize]="pageSize" [pageIndex]="pageIndex" [length]="totalItems">
+  </mat-paginator>
+
+</div>

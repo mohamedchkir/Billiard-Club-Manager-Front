@@ -21,7 +21,13 @@ export const reducer = createReducer(
   initialState,
   on(PlayerActions.loadAllPlayers, (state) => ({...state, players: [], error: null})),
   on(PlayerActions.loadAllPlayersSuccess, (state, {players}) => ({...state, players})),
-  on(PlayerActions.loadAllPlayersFailure, (state, {error}) => ({...state, error}))
+  on(PlayerActions.loadAllPlayersFailure, (state, {error}) => ({...state, error})),
+  on(PlayerActions.deletePlayerSuccess, (state, {id}) => ({
+    ...state,
+    players: state.players.filter(player => player.id !== id)
+  })),
+  on(PlayerActions.deletePlayerFailure, (state, {error}) => ({...state, error})),
+  on(PlayerActions.deletePlayer, (state) => state),
 );
 
 export const playerFeature = createFeature({

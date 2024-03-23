@@ -20,7 +20,10 @@ export const reducer = createReducer(
   initialState,
   on(CityActions.loadAllCitiesSuccess, (state, { cities }) => ({ ...state, cities })),
   on(CityActions.loadAllCitiesFailure, (state, { error }) => ({ ...state, error })),
-  on(CityActions.loadAllCities, (state) => ({ ...state, cities: [], error: null }))
+  on(CityActions.loadAllCities, (state) => ({ ...state, cities: [], error: null })),
+  on(CityActions.deleteCity, (state) => ({ ...state, error: null })),
+  on(CityActions.deleteCitySuccess, (state, { id }) => ({ ...state, cities: state.cities.filter(city => city.id !== id) })),
+  on(CityActions.deleteCityFailure, (state, { error }) => ({ ...state, error })),
 );
 
 export const cityFeature = createFeature({

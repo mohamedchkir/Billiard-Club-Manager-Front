@@ -30,6 +30,29 @@ export class ClubEffects {
     );
   });
 
+  deleteClub$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(ClubActions.deleteClub),
+      concatMap((action) =>
+        this.clubService.deleteClub(action.id).pipe(
+          map(() => ClubActions.deleteClubSuccess({ id: action.id })),
+          catchError(error => of(ClubActions.deleteClubFailure({ error }))))
+      )
+    );
+  });
+
+  addClub$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(ClubActions.addClub),
+      concatMap((action) =>
+        this.clubService.addClub(action.formData).pipe(
+          map(club => ClubActions.addClubSuccess({ club })),
+          catchError(error => of(ClubActions.addClubFailure({ error }))))
+      )
+    );
+});
+
+
   constructor(
     private actions$: Actions,
     private clubService: ClubService

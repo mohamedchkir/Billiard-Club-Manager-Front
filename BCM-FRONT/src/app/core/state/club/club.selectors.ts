@@ -19,3 +19,12 @@ export const selectClubError = createSelector(
   selectClubState,
   (state) => state.error
 );
+
+export const selectClubById = (id: number) =>
+  createSelector(selectClubs, (clubs) => clubs.find((club) => club.id === id));
+
+export const selectClubPage = createSelector(
+  selectClubPageable,
+  (pageable) => pageable.number
+);
+

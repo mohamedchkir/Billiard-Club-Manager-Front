@@ -31,6 +31,17 @@ export class PlayerEffects {
     );
   });
 
+  deletePlayer$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(PlayerActions.deletePlayer),
+      concatMap((action) =>
+        this.playerService.deletePlayer(action.id).pipe(
+          map(() => PlayerActions.deletePlayerSuccess({ id: action.id })),
+          catchError(error => of(PlayerActions.deletePlayerFailure({ error }))))
+      )
+    );
+  });
+
 
   constructor(private actions$: Actions,
               private playerService: PlayerService

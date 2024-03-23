@@ -13,6 +13,10 @@ export class CityService {
   getAllCities():Observable<CityResponseDto[]> {
     return this.http.get<CityResponseDto[]>(this.citiesUrl);
   }
+
+  deleteCity(id: number):Observable<void> {
+    return this.http.delete<void>(`${this.citiesUrl}/${id}`);
+  }
   constructor(private http: HttpClient) { }
 
 }
