@@ -10,6 +10,8 @@ import {StatisticComponent} from "./view/component/statistic/statistic.component
 import {UserDashComponent} from "./view/component/user-dash/user-dash.component";
 import {ClubDashComponent} from "./view/component/club-dash/club-dash.component";
 import {CityDashComponent} from "./view/component/city-dash/city-dash.component";
+import {ServiceService} from "./core/service/service/service.service";
+import {ServiceDashComponent} from "./view/component/service-dash/service-dash.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -24,6 +26,7 @@ const routes: Routes = [
       {path: 'user', component: UserDashComponent},
       {path: 'club', component: ClubDashComponent},
       {path: 'city', component: CityDashComponent},
+      {path: 'service', component: ServiceDashComponent}
 
     ]}
 ];

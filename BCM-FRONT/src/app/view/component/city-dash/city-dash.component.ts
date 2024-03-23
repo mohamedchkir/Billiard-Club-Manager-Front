@@ -13,9 +13,9 @@ import {MatPaginator} from "@angular/material/paginator";
   templateUrl: './city-dash.component.html',
   styleUrl: './city-dash.component.css'
 })
-export class CityDashComponent implements OnInit{
+export class CityDashComponent implements OnInit {
 
-  displayedColumns: string[] = ['No','name', 'actions'];
+  displayedColumns: string[] = ['No', 'name', 'actions'];
   city$!: Observable<CityResponseDto[]>;
   error$!: Observable<SimpleErrorResponse>;
   dataSource = new MatTableDataSource<CityResponseDto>([]);
@@ -24,22 +24,22 @@ export class CityDashComponent implements OnInit{
   totalItems = 0;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-    constructor(private store: Store) {
-    }
+  constructor(private store: Store) {
+  }
 
-    ngOnInit(): void {
-      this.store.dispatch(CityActions.loadAllCities());
-      this.city$ = this.store.pipe(select(selectCities));
-      this.error$ = this.store.pipe(select(selectError)) as Observable<SimpleErrorResponse>;
+  ngOnInit(): void {
+    this.store.dispatch(CityActions.loadAllCities());
+    this.city$ = this.store.pipe(select(selectCities));
+    this.error$ = this.store.pipe(select(selectError)) as Observable<SimpleErrorResponse>;
 
-      this.city$.subscribe(cities => {
-        this.dataSource = new MatTableDataSource(cities);
-        this.dataSource.paginator = this.paginator;
-      });
-    }
+    this.city$.subscribe(cities => {
+      this.dataSource = new MatTableDataSource(cities);
+      this.dataSource.paginator = this.paginator;
+    });
+  }
 
-    deleteCity(id: number) {
-      this.store.dispatch(CityActions.deleteCity({id}));
-    }
+  deleteCity(id: number) {
+    this.store.dispatch(CityActions.deleteCity({id}));
+  }
 
 }

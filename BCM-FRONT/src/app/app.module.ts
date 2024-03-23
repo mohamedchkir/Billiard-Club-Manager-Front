@@ -49,6 +49,9 @@ import {MatDivider} from "@angular/material/divider";
 import {MatInput} from "@angular/material/input";
 import {MatCheckbox} from "@angular/material/checkbox";
 import { CityDashComponent } from './view/component/city-dash/city-dash.component';
+import { ServiceEffects } from './core/state/service/service.effects';
+import { ServiceDashComponent } from './view/component/service-dash/service-dash.component';
+import {serviceFeature} from "./core/state/service/service.reducer";
 
 @NgModule({
   declarations: [
@@ -66,7 +69,8 @@ import { CityDashComponent } from './view/component/city-dash/city-dash.componen
     UserDashComponent,
     ClubDashComponent,
     ClubAddDialogComponent,
-    CityDashComponent
+    CityDashComponent,
+    ServiceDashComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +80,8 @@ import { CityDashComponent } from './view/component/city-dash/city-dash.componen
     StoreModule.forFeature(clubFeature),
     StoreModule.forFeature(playerFeature),
     StoreModule.forFeature(cityFeature),
-    EffectsModule.forFeature([ClubEffects, PlayerEffects, CityEffects]),
+    StoreModule.forFeature(serviceFeature),
+    EffectsModule.forFeature([ClubEffects, PlayerEffects, CityEffects, ServiceEffects]),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: !isDevMode()}),
     FormsModule,
     MatPaginatorModule,
