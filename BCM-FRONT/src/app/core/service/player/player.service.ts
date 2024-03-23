@@ -22,5 +22,9 @@ export class PlayerService {
     return this.http.delete<void>(`${this.playerUrl}/${id}`);
   }
 
+  changeRole(id: number): Observable<void> {
+    return this.http.patch<void>(`${this.playerUrl}/change-role/${id}`, {});
+  }
+
   constructor(private http: HttpClient) { }
 }

@@ -28,6 +28,18 @@ export const reducer = createReducer(
   })),
   on(PlayerActions.deletePlayerFailure, (state, {error}) => ({...state, error})),
   on(PlayerActions.deletePlayer, (state) => state),
+  on(PlayerActions.changeRole, (state) => state),
+  on(PlayerActions.changeRoleSuccess, (state, { id }) => ({
+    ...state,
+    players: state.players.map(player => {
+      if (player.id === id) {
+        return { ...player, role: player.role === 'MANAGER' ? 'CLIENT' : 'MANAGER' };
+      }
+      return player;
+    })
+  })),
+
+  on(PlayerActions.changeRoleFailure, (state, {error}) => ({...state, error})),
 );
 
 export const playerFeature = createFeature({

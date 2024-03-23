@@ -11,8 +11,8 @@ import {MatDialogRef} from "@angular/material/dialog";
 })
 export class ClubAddDialogComponent implements OnInit {
   clubForm!: FormGroup;
-  services : number[] = [1,2];
-  cities : number[] = [1,2,3,4,5,6,7,8,9,10];
+  services: number[] = [1, 2];
+  cities: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   image: File = new File([], '');
   servicesSelected: number[] = [];
 
@@ -70,6 +70,4 @@ export class ClubAddDialogComponent implements OnInit {
     this.dialogRef.close();
   }
 
-
-  protected readonly onsubmit = onsubmit;
 }

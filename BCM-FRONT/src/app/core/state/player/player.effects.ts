@@ -42,6 +42,17 @@ export class PlayerEffects {
     );
   });
 
+  changeRole$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(PlayerActions.changeRole),
+      concatMap((action) =>
+        this.playerService.changeRole(action.id).pipe(
+          map(() => PlayerActions.changeRoleSuccess({ id: action.id })),
+          catchError(error => of(PlayerActions.changeRoleFailure({ error }))))
+      )
+    );
+  });
+
 
   constructor(private actions$: Actions,
               private playerService: PlayerService

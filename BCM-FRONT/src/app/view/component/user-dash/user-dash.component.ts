@@ -37,4 +37,7 @@ export class UserDashComponent implements OnInit {
   deleteUser(id: number) {
     this.store.dispatch(PlayerActions.deletePlayer({id}));
   }
+  changeRole(id: number) {
+    this.store.dispatch(PlayerActions.changeRole({id}));
+  }
 }

@@ -12,5 +12,8 @@ export const PlayerActions = createActionGroup({
     DeletePlayer: props<{ id: number }>(),
     DeletePlayerSuccess: props<{ id: number }>(),
     DeletePlayerFailure: props<{ error: SimpleErrorResponse }>(),
+    ChangeRole: props<{ id: number }>(),
+    ChangeRoleSuccess: props<{ id: number }>(),
+    ChangeRoleFailure: props<{ error: SimpleErrorResponse }>()
   }
 });

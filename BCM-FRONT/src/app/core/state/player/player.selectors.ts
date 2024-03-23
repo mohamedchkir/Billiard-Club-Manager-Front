@@ -20,5 +20,12 @@ export const selectClient = createSelector(
   (state) => state.players.filter(player => player.role.includes('CLIENT'))
 );
 
+export const selectManager = createSelector(
+  selectPlayerState,
+  (state) => state.players.filter(player => player.role.includes('MANAGER'))
+);
+
+
+
 
 

@@ -1,46 +1,47 @@
-<h2 class="text-xl font-semibold mb-4">
+<h2 class="text-xl w-[800px] flex justify-between h-16 align-middle mb-4 text-white ">
   Add Club
   <hr class="my-2">
 </h2>
 
-<form [formGroup]="clubForm" (ngSubmit)="addClub()">
+<form [formGroup]="clubForm" (ngSubmit)="addClub()" class="w-[630px] mx-auto mb-1.5">
   <div class="mb-4">
-    <label for="name" class="block mb-1">Name:</label>
+    <label for="name" class="block mb-1 text-white font-mono ">Name:</label>
     <input id="name" type="text" formControlName="name" class="w-full px-3 py-2 border rounded">
   </div>
 
   <div class="mb-4">
-    <label for="description" class="block mb-1">Description:</label>
+    <label for="description" class="block mb-1 text-white font-mono ">Description:</label>
     <textarea id="description" formControlName="description" class="w-full px-3 py-2 border rounded"></textarea>
   </div>
 
   <div class="mb-4">
-    <label for="address" class="block mb-1">Address:</label>
+    <label for="address" class="block mb-1 text-white font-mono ">Address:</label>
     <input id="address" type="text" formControlName="address" class="w-full px-3 py-2 border rounded">
   </div>
 
   <div class="mb-4">
-    <label for="openingHour" class="block mb-1">Opening Hour:</label>
+    <label for="openingHour" class="block mb-1 text-white font-mono ">Opening Hour:</label>
     <input id="openingHour" type="time" formControlName="openingHour" class="w-full px-3 py-2 border rounded">
   </div>
 
   <div class="mb-4">
-    <label for="closeHour" class="block mb-1">Close Hour:</label>
+    <label for="closeHour" class="block mb-1 text-white font-mono ">Close Hour:</label>
     <input id="closeHour" type="time" formControlName="closeHour" class="w-full px-3 py-2 border rounded">
   </div>
 
   <div class="mb-4">
-    <label for="numberOfToken" class="block mb-1">Number of Token:</label>
+    <label for="numberOfToken" class="block mb-1 text-white font-mono ">Number of Token:</label>
     <input id="numberOfToken" type="number" formControlName="numberOfToken" class="w-full px-3 py-2 border rounded">
   </div>
 
   <div class="mb-4">
-    <label for="image" class="block mb-1">Image:</label>
-    <input (change)="onImageChange($event)"  id="image" type="file" class="w-full px-3 py-2 border rounded">
+    <label for="image" class="block mb-1 text-white font-mono ">Image:</label>
+    <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50  focus:outline-none " (change)="onImageChange($event)"  id="image" type="file">
+
   </div>
 
   <div class="mb-4">
-    <label for="city" class="block mb-1">City:</label>
+    <label for="city" class="block mb-1 text-white font-mono ">City:</label>
     <select id="city" formControlName="cityId" class="w-full px-3 py-2 border rounded">
       <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
     </select>
@@ -48,12 +49,14 @@
 
   <!-- Add checkboxes for selecting services -->
   <div class="mb-4">
-    <label class="block mb-1">Services:</label>
+    <label class="block mb-1 text-white font-mono ">Services:</label>
     <div *ngFor="let service of services" class="flex items-center">
       <input type="checkbox"  [value]="service" (change)="onCheckboxChange($event)">
       <span>{{ service }}</span>
     </div>
   </div>
+
+
 
   <!-- Submit button -->
   <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Create Club</button>
