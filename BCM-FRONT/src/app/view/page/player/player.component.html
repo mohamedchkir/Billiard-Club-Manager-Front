@@ -15,7 +15,42 @@
         </div>
       </div>
 
-      <app-search/>
+      <!-- Search component-->
+      <div class=" w-screen max-w-screen-md">
+        <div class="flex flex-col">
+          <div class="rounded-xl bg-gray-950 p-6 shadow-lg">
+            <form (ngSubmit)="onSearch(name.value, city.value)">
+
+              <div class="flex justify-between gap-4">
+                <div class="relative  w-full flex items-center justify-between rounded-md">
+                  <svg class="absolute left-2 block h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24"
+                       height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                       stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8" class=""></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" class=""></line>
+                  </svg>
+                  <input #name type="text" name="search"
+                         class=" font-mono h-12 w-full cursor-text rounded-md border border-gray-100 bg-gray-100 py-4 pr-40 pl-12 shadow-sm outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+                         placeholder="Search by name" />
+                </div>
+                <div  class="flex flex-col">
+                  <select #city id="city"
+                          class=" block w-full font-mono rounded-md border overflow-auto border-gray-100 bg-gray-100 px-2 py-3 shadow-sm outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                    <option value="">City</option>
+                    <option *ngFor="let city of cities$ | async" [value]="city.id">{{city.name}}</option>
+                  </select>
+                </div>
+
+              </div>
+
+              <div class="mt-6 grid w-full grid-cols-2 justify-center space-x-4 md:flex">
+                <button
+                  class=" font-mono rounded-lg hover:bg-green-800 hover:text-white hover:border border border-black hover:border-white w-1/2 px-8 py-2 font-medium text-white outline-none focus:ring">Search</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
@@ -28,7 +63,7 @@
     <div class="grid gap-8 lg:grid-cols-4 sm:max-w-sm sm:mx-auto lg:max-w-full " *ngIf="(players$ | async) as players">
       <div class="flex border-b pb-4 border-gray-700" *ngFor="let player of players">
         <img class="object-cover w-20 h-20 mr-4 rounded-full shadow"
-          src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
+          src="{{player.imageUrl}}"
           alt="Person" />
         <div class="flex flex-col justify-center">
           <p class="text-lg font-bold text-white font-mono"> {{player.firstName}}  {{player.lastName}}</p>

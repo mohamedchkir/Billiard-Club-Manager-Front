@@ -4,8 +4,8 @@
     <div class="grid py-8 sm:grid-cols-4" *ngFor="let item of data.slice(0, displayedArticles)">
       <div class="mb-4 sm:mb-0">
         <div class="space-y-1 text-xs font-bold tracking-wide uppercase">
-          <a href="/" class="transition-colors duration-200 text-green-400 hover:text-green-800" aria-label="Category">POOL</a>
           <p class="text-white font-mono font-bold">{{ item.date }}</p>
+          <a [href]="item.article_href" class="transition-colors duration-200 text-green-400 hover:text-green-800" aria-label="Category">See Details >></a>
         </div>
       </div>
 
