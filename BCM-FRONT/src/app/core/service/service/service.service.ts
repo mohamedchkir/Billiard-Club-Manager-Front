@@ -18,5 +18,9 @@ export class ServiceService {
     return this.http.delete<void>(`${this.serviceUrl}/${id}`);
   }
 
+  addService(service: FormData): Observable<ServiceResponseDto> {
+    return this.http.post<ServiceResponseDto>(this.serviceUrl, service);
+  }
+
   constructor(private http:HttpClient) { }
 }

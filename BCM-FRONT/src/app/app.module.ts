@@ -53,6 +53,9 @@ import { ServiceEffects } from './core/state/service/service.effects';
 import { ServiceDashComponent } from './view/component/service-dash/service-dash.component';
 import {serviceFeature} from "./core/state/service/service.reducer";
 import { NewsComponent } from './view/page/news/news.component';
+import { ServiceAddBottomSheetComponent } from './view/component/service-add-bottom-sheet/service-add-bottom-sheet.component';
+import {MatListItem, MatNavList} from "@angular/material/list";
+import {MatLine} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -72,7 +75,8 @@ import { NewsComponent } from './view/page/news/news.component';
     ClubAddDialogComponent,
     CityDashComponent,
     ServiceDashComponent,
-    NewsComponent
+    NewsComponent,
+    ServiceAddBottomSheetComponent
   ],
   imports: [
     BrowserModule,
@@ -110,6 +114,9 @@ import { NewsComponent } from './view/page/news/news.component';
     MatDialogContent,
     MatInput,
     MatCheckbox,
+    MatNavList,
+    MatListItem,
+    MatLine,
   ],
   providers: [
     provideHttpClient(),

@@ -25,9 +25,13 @@ export const reducer = createReducer(
   on(ServiceActions.deleteService, (state) => ({ ...state, error: null })),
   on(ServiceActions.deleteServiceSuccess, (state, { id }) => ({ ...state, services: state.services.filter(service => service.id !== id) })),
   on(ServiceActions.deleteServiceFailure, (state, { error }) => ({ ...state, error })),
+  on(ServiceActions.addService, (state) => ({ ...state, error: null })),
+  on(ServiceActions.addServiceSuccess, (state, { service }) => ({ ...state, services: [...state.services, service] })),
+  on(ServiceActions.addServiceFailure, (state, { error }) => ({ ...state, error })),
 
 
 );
+
 
 export const serviceFeature = createFeature({
   name: serviceFeatureKey,

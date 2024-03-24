@@ -7,6 +7,8 @@ import {MatPaginator} from "@angular/material/paginator";
 import {select, Store} from "@ngrx/store";
 import {ServiceActions} from "../../../core/state/service/service.actions";
 import {selectError, selectServices} from "../../../core/state/service/service.selectors";
+import {MatBottomSheet} from "@angular/material/bottom-sheet";
+import {ServiceAddBottomSheetComponent} from "../service-add-bottom-sheet/service-add-bottom-sheet.component";
 
 @Component({
   selector: 'app-service-dash',
@@ -24,7 +26,8 @@ export class ServiceDashComponent implements OnInit {
   totalItems = 0;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private store: Store) {
+  constructor(private store: Store,
+              private bottomSheet: MatBottomSheet) {
   }
 
   ngOnInit(): void {
@@ -41,5 +44,9 @@ export class ServiceDashComponent implements OnInit {
 
   deleteService(id: number) {
     this.store.dispatch(ServiceActions.deleteService({id}));
+  }
+
+  openDialog() {
+    this.bottomSheet.open(ServiceAddBottomSheetComponent);
   }
 }

@@ -36,6 +36,19 @@ export class ServiceEffects {
   }
   );
 
+  addService$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(ServiceActions.addService),
+      concatMap(({service}) =>
+        this.serviceService.addService(service).pipe(
+          map(service => ServiceActions.addServiceSuccess({service})),
+          catchError(error => of(ServiceActions.addServiceFailure({error})))
+        )
+      )
+    );
+  }
+  );
+
 
   constructor(private actions$: Actions,
               private serviceService:ServiceService) {}

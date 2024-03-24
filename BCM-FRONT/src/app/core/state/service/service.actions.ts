@@ -10,6 +10,9 @@ export const ServiceActions = createActionGroup({
     LoadAllServicesFailure: props<{ error: SimpleErrorResponse }>(),
     DeleteService: props<{ id: number }>(),
     DeleteServiceSuccess: props<{ id: number }>(),
-    DeleteServiceFailure: props<{ error: SimpleErrorResponse }>()
+    DeleteServiceFailure: props<{ error: SimpleErrorResponse }>(),
+    AddService: props<{ service: FormData }>(),
+    AddServiceSuccess: props<{ service: ServiceResponseDto }>(),
+    AddServiceFailure: props<{ error: SimpleErrorResponse }>(),
   }
 });
