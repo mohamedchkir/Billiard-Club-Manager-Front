@@ -1,63 +1,70 @@
-<h2 class="text-xl w-[800px] flex justify-between h-16 align-middle mb-4 text-white ">
-  Add Club
-  <hr class="my-2">
-</h2>
+<mat-dialog-content class="w-[630px] mx-auto overflow-auto max-h-[400px]">
 
-<form [formGroup]="clubForm" (ngSubmit)="addClub()" class="w-[630px] mx-auto mb-1.5">
-  <div class="mb-4">
-    <label for="name" class="block mb-1 text-white font-mono ">Name:</label>
-    <input id="name" type="text" formControlName="name" class="w-full px-3 py-2 border rounded">
+  <div class="h-max mb-2 flex justify-center overflow-auto  border-b-2 border-amber-50">
+    <h2 class="text-xl align-middle mb-1 text-white ">
+      Add Club
+    </h2>
   </div>
 
-  <div class="mb-4">
-    <label for="description" class="block mb-1 text-white font-mono ">Description:</label>
-    <textarea id="description" formControlName="description" class="w-full px-3 py-2 border rounded"></textarea>
-  </div>
+    <form [formGroup]="clubForm" (ngSubmit)="addClub()" class=" mx-auto px-4 mb-1.5 overflow-auto scroll-auto">
+      <div class="mb-4">
+        <label for="name" class="block mb-1 text-white font-mono">Name:</label>
+        <input id="name" type="text" formControlName="name" class="w-full px-3 py-2 border rounded text-black">
+      </div>
 
-  <div class="mb-4">
-    <label for="address" class="block mb-1 text-white font-mono ">Address:</label>
-    <input id="address" type="text" formControlName="address" class="w-full px-3 py-2 border rounded">
-  </div>
+      <div class="mb-4">
+        <label for="description" class="block mb-1 text-white font-mono ">Description:</label>
+        <textarea id="description" formControlName="description" class="w-full px-3 py-2 border rounded text-black"></textarea>
+      </div>
 
-  <div class="mb-4">
-    <label for="openingHour" class="block mb-1 text-white font-mono ">Opening Hour:</label>
-    <input id="openingHour" type="time" formControlName="openingHour" class="w-full px-3 py-2 border rounded">
-  </div>
+      <div class="mb-4">
+        <label for="address" class="block mb-1 text-white font-mono ">Address:</label>
+        <input id="address" type="text" formControlName="address" class="w-full px-3 py-2 border rounded text-black">
+      </div>
 
-  <div class="mb-4">
-    <label for="closeHour" class="block mb-1 text-white font-mono ">Close Hour:</label>
-    <input id="closeHour" type="time" formControlName="closeHour" class="w-full px-3 py-2 border rounded">
-  </div>
+      <div class="mb-4">
+        <label for="openingHour" class="block mb-1 text-white font-mono ">Opening Hour:</label>
+        <input id="openingHour" type="time" formControlName="openingHour" class="w-full px-3 py-2 border rounded text-black">
+      </div>
 
-  <div class="mb-4">
-    <label for="numberOfToken" class="block mb-1 text-white font-mono ">Number of Token:</label>
-    <input id="numberOfToken" type="number" formControlName="numberOfToken" class="w-full px-3 py-2 border rounded">
-  </div>
+      <div class="mb-4">
+        <label for="closeHour" class="block mb-1 text-white font-mono ">Close Hour:</label>
+        <input id="closeHour" type="time" formControlName="closeHour" class="w-full px-3 py-2 border rounded text-black">
+      </div>
 
-  <div class="mb-4">
-    <label for="image" class="block mb-1 text-white font-mono ">Image:</label>
-    <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50  focus:outline-none " (change)="onImageChange($event)"  id="image" type="file">
-
-  </div>
-
-  <div class="mb-4">
-    <label for="city" class="block mb-1 text-white font-mono ">City:</label>
-    <select id="city" formControlName="cityId" class="w-full px-3 py-2 border rounded">
-      <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
-    </select>
-  </div>
-
-  <!-- Add checkboxes for selecting services -->
-  <div class="mb-4">
-    <label class="block mb-1 text-white font-mono ">Services:</label>
-    <div *ngFor="let service of services" class="flex items-center">
-      <input type="checkbox"  [value]="service" (change)="onCheckboxChange($event)">
-      <span>{{ service }}</span>
-    </div>
-  </div>
+      <div class="mb-4">
+        <label for="numberOfToken" class="block mb-1 text-white font-mono ">Number of Token:</label>
+        <input id="numberOfToken" type="number" formControlName="numberOfToken" class="w-full px-3 py-2 border rounded text-black">
+      </div>
 
 
+      <div class="mb-4">
+        <label for="city" class="block mb-1 text-white font-mono">City:</label>
+        <select id="city" formControlName="cityId" class="w-full px-3 py-2 border rounded text-black text-black">
+          <option *ngFor="let city of cities$ | async" [value]="city.id">{{ city.name }}</option>
+        </select>
+      </div>
 
-  <!-- Submit button -->
-  <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Create Club</button>
-</form>
+      <!-- Checkbox for selecting services -->
+        <label class="block mb-1 text-white font-mono">Services:</label>
+      <div class="mb-4 grid grid-cols-3 gap-2">
+        <div *ngFor="let service of services$ | async" class="flex items-center  ">
+          <input class="w-8 h-6" type="checkbox" [value]="service.id" (change)="onCheckboxChange($event)">
+          <span class=" px-1 text-white">{{ service.name }}</span>
+        </div>
+      </div>
+
+      <!-- File input for image -->
+      <div class="mb-4">
+        <label for="image" class="block mb-1 text-white font-mono">Image:</label>
+        <input id="image" class="block w-full text-sm py-2 text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none" (change)="onImageChange($event)" type="file">
+      </div>
+
+      <!-- Submit button -->
+      <div class="flex justify-center">
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Create Club</button>
+      </div>
+    </form>
+
+
+</mat-dialog-content>

@@ -36,7 +36,7 @@ import {
   MatRow, MatRowDef,
   MatTable
 } from "@angular/material/table";
-import {MatFormField} from "@angular/material/form-field";
+import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
 import {MatOption} from "@angular/material/autocomplete";
 import {MatSelect} from "@angular/material/select";
 import {MatButton, MatIconButton} from "@angular/material/button";
@@ -117,6 +117,7 @@ import {MatLine} from "@angular/material/core";
     MatNavList,
     MatListItem,
     MatLine,
+    MatFormFieldModule
   ],
   providers: [
     provideHttpClient(),

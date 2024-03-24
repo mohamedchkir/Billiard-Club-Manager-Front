@@ -1,8 +1,15 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Store} from "@ngrx/store";
-import {ClubActions} from "../../../core/state/club/club.actions";
-import {MatDialogRef} from "@angular/material/dialog";
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Store } from "@ngrx/store";
+import { ClubActions } from "../../../core/state/club/club.actions";
+import { MatDialogRef } from "@angular/material/dialog";
+import { Observable } from "rxjs";
+import { CityResponseDto } from "../../../core/model/CityResponseDto";
+import { ServiceActions } from "../../../core/state/service/service.actions";
+import { CityActions } from "../../../core/state/city/city.actions";
+import { selectCities } from "../../../core/state/city/city.selectors";
+import { ServiceResponseDto } from "../../../core/model/ServiceResponseDto";
+import { selectServices } from "../../../core/state/service/service.selectors";
 
 @Component({
   selector: 'app-club-add-dialog',
@@ -11,8 +18,8 @@ import {MatDialogRef} from "@angular/material/dialog";
 })
 export class ClubAddDialogComponent implements OnInit {
   clubForm!: FormGroup;
-  services: number[] = [1, 2];
-  cities: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  services$!: Observable<ServiceResponseDto[]>;
+  cities$!: Observable<CityResponseDto[]>;
   image: File = new File([], '');
   servicesSelected: number[] = [];
 
@@ -42,6 +49,10 @@ export class ClubAddDialogComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.store.dispatch(ServiceActions.loadAllServices());
+    this.store.dispatch(CityActions.loadAllCities());
+    this.cities$ = this.store.select(selectCities);
+    this.services$= this.store.select(selectServices)
     this.clubForm = this.fb.group({
       name: ['', Validators.required],
       address: ['', Validators.required],
@@ -69,5 +80,6 @@ export class ClubAddDialogComponent implements OnInit {
     this.store.dispatch(ClubActions.addClub({formData: formData}));
     this.dialogRef.close();
   }
+
 
 }
