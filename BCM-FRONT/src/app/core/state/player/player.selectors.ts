@@ -25,6 +25,11 @@ export const selectManager = createSelector(
   (state) => state.players.filter(player => player.role.includes('MANAGER'))
 );
 
+export const selectRole = createSelector(
+  selectPlayerState,
+  (state) => state.players.map(player => player.role)
+);
+
 
 
 

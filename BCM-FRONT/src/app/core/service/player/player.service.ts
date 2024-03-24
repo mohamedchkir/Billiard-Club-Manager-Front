@@ -14,8 +14,8 @@ export class PlayerService {
     return this.http.get<UserSimpleResponseDto[]>(this.playerUrl);
   }
 
-  searchPlayers(word: string, cityId: number): Observable<UserSimpleResponseDto[]> {
-    return this.http.get<UserSimpleResponseDto[]>(this.searchUrl, {params: {word, cityId: cityId.toString()}});
+  searchPlayers(firstNameOrLast:string, cityId: string): Observable<UserSimpleResponseDto[]> {
+    return this.http.get<UserSimpleResponseDto[]>(this.searchUrl, {params: {firstNameOrLast, cityId: cityId}});
   }
 
   deletePlayer(id: number): Observable<void> {

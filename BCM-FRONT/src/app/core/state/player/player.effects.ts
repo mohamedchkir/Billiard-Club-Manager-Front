@@ -24,9 +24,9 @@ export class PlayerEffects {
     return this.actions$.pipe(
       ofType(PlayerActions.searchPlayers),
       concatMap((action) =>
-        this.playerService.searchPlayers(action.search, action.cityId).pipe(
-          map(players => PlayerActions.loadAllPlayersSuccess({ players })),
-          catchError(error => of(PlayerActions.loadAllPlayersFailure({ error }))))
+        this.playerService.searchPlayers(action.firstNameOrLast, action.cityId).pipe(
+          map(players => PlayerActions.searchPlayersSuccess({ players })),
+          catchError(error => of(PlayerActions.searchPlayersFailure({ error }))))
       )
     );
   });

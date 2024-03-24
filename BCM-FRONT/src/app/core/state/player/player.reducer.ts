@@ -40,7 +40,13 @@ export const reducer = createReducer(
   })),
 
   on(PlayerActions.changeRoleFailure, (state, {error}) => ({...state, error})),
+  on(PlayerActions.searchPlayers, (state) => state),
+  on(PlayerActions.searchPlayersSuccess, (state, {players}) => ({...state, players}),),
+  on(PlayerActions.searchPlayersFailure, (state, {error}) => ({...state, error}), ),
+
 );
+
+
 
 export const playerFeature = createFeature({
   name: playerFeatureKey,
