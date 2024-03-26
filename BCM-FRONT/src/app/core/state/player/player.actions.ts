@@ -18,5 +18,6 @@ export const PlayerActions = createActionGroup({
     SearchPlayersSuccess: props<{ players: UserSimpleResponseDto[] }>(),
     SearchPlayersFailure: props<{ error: SimpleErrorResponse }>(),
 
+
   }
 });

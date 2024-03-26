@@ -56,6 +56,12 @@ import { NewsComponent } from './view/page/news/news.component';
 import { ServiceAddBottomSheetComponent } from './view/component/service-add-bottom-sheet/service-add-bottom-sheet.component';
 import {MatListItem, MatNavList} from "@angular/material/list";
 import {MatLine} from "@angular/material/core";
+import { ClubDetailsComponent } from './view/page/club-details/club-details.component';
+import {MatTooltip} from "@angular/material/tooltip";
+import {BrowserAnimationsModule, provideAnimations} from "@angular/platform-browser/animations";
+import {provideToastr, ToastrModule} from "ngx-toastr";
+import { CityAddBottomSheetComponent } from './view/component/city-add-bottom-sheet/city-add-bottom-sheet.component';
+import { UserEffects } from './core/state/user/user.effects';
 
 @NgModule({
   declarations: [
@@ -76,7 +82,9 @@ import {MatLine} from "@angular/material/core";
     CityDashComponent,
     ServiceDashComponent,
     NewsComponent,
-    ServiceAddBottomSheetComponent
+    ServiceAddBottomSheetComponent,
+    ClubDetailsComponent,
+    CityAddBottomSheetComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +95,7 @@ import {MatLine} from "@angular/material/core";
     StoreModule.forFeature(playerFeature),
     StoreModule.forFeature(cityFeature),
     StoreModule.forFeature(serviceFeature),
-    EffectsModule.forFeature([ClubEffects, PlayerEffects, CityEffects, ServiceEffects]),
+    EffectsModule.forFeature([ClubEffects, PlayerEffects, CityEffects, ServiceEffects, UserEffects]),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: !isDevMode()}),
     FormsModule,
     MatPaginatorModule,
@@ -117,7 +125,11 @@ import {MatLine} from "@angular/material/core";
     MatNavList,
     MatListItem,
     MatLine,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatTooltip,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(),
+
   ],
   providers: [
     provideHttpClient(),

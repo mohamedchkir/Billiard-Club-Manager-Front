@@ -42,4 +42,7 @@ export class CityDashComponent implements OnInit {
     this.store.dispatch(CityActions.deleteCity({id}));
   }
 
+
+
+
 }

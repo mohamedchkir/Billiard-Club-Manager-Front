@@ -30,13 +30,13 @@
                   </svg>
                   <input #name type="text" name="search"
                          class=" font-mono h-12 w-full cursor-text rounded-md border border-gray-100 bg-gray-100 py-4 pr-40 pl-12 shadow-sm outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-                         placeholder="Search by name" />
+                         placeholder="Search by name"/>
                 </div>
-                <div  class="flex flex-col">
+                <div class="flex flex-col">
                   <select #city id="city"
                           class=" block w-full font-mono rounded-md border overflow-auto border-gray-100 bg-gray-100 px-2 py-3 shadow-sm outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                     <option value="">City</option>
-                    <option *ngFor="let city of cities$ | async" [value]="city.id">{{city.name}}</option>
+                    <option *ngFor="let city of cities$ | async" [value]="city.id">{{ city.name }}</option>
                   </select>
                 </div>
 
@@ -44,7 +44,9 @@
 
               <div class="mt-6 grid w-full grid-cols-2 justify-center space-x-4 md:flex">
                 <button
-                  class=" font-mono rounded-lg hover:bg-green-800 hover:text-white hover:border border border-black hover:border-white w-1/2 px-8 py-2 font-medium text-white outline-none focus:ring">Search</button>
+                  class=" font-mono rounded-lg hover:bg-green-800 hover:text-white hover:border border border-black hover:border-white w-1/2 px-8 py-2 font-medium text-white outline-none focus:ring">
+                  Search
+                </button>
               </div>
             </form>
           </div>
@@ -58,32 +60,33 @@
 <!-- content -->
 <div class="bg-gray-950">
   <div class="px-4 py-1 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
-    <div class="grid gap-8 lg:grid-cols-4 sm:max-w-sm sm:mx-auto lg:max-w-full m-8 min-h-60"  *ngIf="clubs">
+    <div class="grid gap-8 lg:grid-cols-4n justify-center sm:max-w-sm sm:mx-auto lg:max-w-full m-8 min-h-60"
+         *ngIf="clubs">
 
       <div class="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm" *ngFor="let club of clubs">
-        <img src="{{club.imageUrl}}" class="object-fill w-full h-60" alt="" />
+        <img src="{{club.imageUrl}}" class="object-fill w-full h-60" alt=""/>
         <div class="px-5 py-3">
           <a href="/" aria-label="Category" title="Film It!"
-            class="inline-block mb-3 text-2xl font-bold leading-5 transition-colors duration-200 hover:text-green-800">{{club.name}}</a>
+             class="inline-block mb-3 text-2xl font-bold leading-5 transition-colors duration-200 hover:text-green-800">{{ club.name }}</a>
           <p class="mb-2 text-gray-700 border-y-2 p-1">
-            {{club.description}}
+            {{ club.description }}
           </p>
           <div class=" flex justify-between text-center">
             <a href="/" aria-label=""
-              class="inline-flex  font-semibold transition-colors duration-200 text-green-700 hover:text-green-900">Learn
+               class="inline-flex  font-semibold transition-colors duration-200 text-green-700 hover:text-green-900">Learn
               more</a>
 
             <p class="flex text-center text-sm">
-              <svg  class="w-4 h-5 " id="" xmlns="http://www.w3.org/2000/svg"
-                 viewBox="0 0 395.71 395.71" >
+              <svg class="w-4 h-5 " id="" xmlns="http://www.w3.org/2000/svg"
+                   viewBox="0 0 395.71 395.71">
                 <g>
                   <path d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738
 		c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388
 		C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191
-		c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+		c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
                 </g>
               </svg>
-              <span class="">{{club.city.name}}</span>
+              <span class="">{{ club.city.name }}</span>
             </p>
           </div>
         </div>
@@ -91,7 +94,7 @@
       <div class="grid-cols-2">
         <p *ngIf="clubs.length<1" class="text-2xl font-bold text-white justify-center">No clubs found</p>
 
-        </div>
+      </div>
 
     </div>
     <mat-paginator #paginator

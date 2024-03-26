@@ -1,13 +1,9 @@
 <div class="flex flex-col" >
-  <form [formGroup]="serviceForm" (ngSubmit)="addService()" class="flex flex-col w-full">
+  <form class="flex flex-col w-full">
     <div class="grid grid-cols-2 justify-between px-4 py-2 bg-gray-100">
       <div class="flex flex-col">
         <label for="name" class="text-sm text-gray-900">Name</label>
         <input type="text" formControlName="name" id="name" class="w-3/4 p-2 border border-gray-300 text-black rounded-md" />
-      </div>
-      <div class="flex flex-col">
-        <label for="image" class="text-sm text-gray-900">Image</label>
-        <input type="file" (change)="onImageChange($event)" id="image" class="w-3/4 p-2 border border-gray-300  text-black rounded-md" />
       </div>
     </div>
     <div class="flex justify-center w-full px-4 py-2 bg-gray-100">
