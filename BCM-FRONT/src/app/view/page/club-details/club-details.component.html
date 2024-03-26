@@ -1,12 +1,12 @@
 <app-navbar/>
 
-<div class="text-white p-20 ">
+<div class="text-white p-20 " *ngIf="(club$|async) as club">
 
-  <main class="flex flex-col items-center justify-center mt-32 mx-auto w-full md:mt-10 md:w-full mb-3">
+  <main class="flex flex-col items-center justify-center mt-32 mx-auto w-full md:mt-10 md:w-full mb-3 " >
     <section
       class="flex items-center justify-between w-full px-5 py-3 rounded-lg border border-solid border-neutral-800">
       <header class="flex items-end">
-        <h1 class="text-2xl font-semibold text-white">Master Club </h1>
+        <h1 class="text-2xl font-semibold text-white">{{ club.name }} </h1>
 
       </header>
       <div class="flex">
@@ -23,7 +23,7 @@
   </main>
 
   <div class="flex justify-center">
-    <img class="rounded-lg w-11/12  bg-cover h-64" src="assets/images/maxresdefault.jpg" alt="Club image">
+    <img class="rounded-lg w-11/12  bg-cover h-64" src="{{club.imageUrl}}" alt="Club image">
   </div>
 
   <main class="flex flex-col items-center justify-center  mx-auto w-full md:mt-10 md:w-full mb-3">
@@ -49,7 +49,7 @@
               </g>
             </g>
           </svg>
-          Beni mellal , Morocco, 12345
+          {{ club.address }}
         </p>
 
       </header>
@@ -87,9 +87,7 @@
         <div
           class="flex flex-col p-12 rounded-xl border border-solid border-neutral-800 leading-[150%] max-md:px-5 max-md:mt-8">
           <h2 class="text-xl font-semibold text-white">Description</h2>
-          <p class="mt-3.5 text-lg font-light leading-7 text-neutral-400">Discover your own piece of paradise with the
-            Seaside Serenity Villa. With an open floor plan, breathtaking ocean views from every room, and direct access
-            to a pristine sandy beach, this property is the epitome of coastal living.</p>
+          <p class="mt-3.5 text-lg font-light leading-7 text-neutral-400">{{club.description}}</p>
           <div class="flex gap-5 pt-5 mt-12 border-t border-solid border-neutral-800 max-md:flex-wrap">
 
           </div>
@@ -101,11 +99,11 @@
           <h2 class="text-xl font-semibold text-white">Services </h2>
           <div class="grid grid-cols-3 md:grid-cols-3">
             <div
-                 class="flex  justify-center gap-2.5  mt-7 max-md:flex-wrap">
+                 class="flex  justify-center gap-2.5  mt-7 max-md:flex-wrap" *ngFor="let service of club.services">
 
-              <img class="shrink-0 h-6 w-6 aspect-square" src="assets/images/icons8-wifi-50%20(1).png" alt="icon-logo"/>
+              <img class="shrink-0 h-6 w-6 aspect-square" src="{{service.imageUrl}}" alt="icon-logo"/>
 
-              hello
+              {{ service.name }}
             </div>
             <div
                  class="flex  justify-center gap-2.5  mt-7  max-md:flex-wrap">

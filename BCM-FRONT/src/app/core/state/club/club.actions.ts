@@ -16,6 +16,12 @@ export const ClubActions = createActionGroup({
     addClub: props<{ formData: FormData }>(),
     addClubSuccess: props<{ club: ClubResponseDto }>(),
     addClubFailure: props<{ error: SimpleErrorResponse }>(),
+    loadClubById: props<{ id: number }>(),
+    loadClubByIdSuccess: props<{ club: ClubResponseDto }>(),
+    loadClubByIdFailure: props<{ error: SimpleErrorResponse }>(),
+    updateClub: props<{ id: number, formData: FormData }>(),
+    updateClubSuccess: props<{ club: ClubResponseDto }>(),
+    updateClubFailure: props<{ error: SimpleErrorResponse }>(),
 
   }
 });

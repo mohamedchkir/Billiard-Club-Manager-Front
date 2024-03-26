@@ -64,7 +64,18 @@ export const reducer = createReducer(
     error: error
   })),
   on(ClubActions.addClub, (state) => state),
+
+  on(ClubActions.loadClubByIdSuccess, (state, { club }) => ({
+    ...state,club
+  })),
+  on(ClubActions.loadClubByIdFailure, (state, { error }) => ({
+    ...state,
+    error: error
+  })),
+  on(ClubActions.loadClubById, (state) => state),
+
 );
+
 
 
 

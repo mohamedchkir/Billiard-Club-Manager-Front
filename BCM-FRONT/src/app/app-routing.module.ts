@@ -22,7 +22,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'player', component: PlayerComponent},
   {path: 'news', component: NewsComponent},
-  {path: 'details', component: ClubDetailsComponent},
+  {path: 'club-details/:id', component: ClubDetailsComponent},
 
 
   {path: 'dashboard', component: DashboardComponent, children: [

@@ -52,6 +52,18 @@ export class ClubEffects {
     );
 });
 
+  loadClubById$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(ClubActions.loadClubById),
+      concatMap((action) =>
+        this.clubService.getClubById(action.id).
+          pipe(
+            map(club => ClubActions.loadClubByIdSuccess({ club })),
+            catchError(error => of(ClubActions.loadClubByIdFailure({ error }))))
+      )
+    );
+  });
+
 
   constructor(
     private actions$: Actions,

@@ -37,6 +37,10 @@ export class ClubService {
     return this.http.post<ClubResponseDto>(this.clubsUrl, formData);
   }
 
+  getClubById(id: number): Observable<ClubResponseDto> {
+    return this.http.get<ClubResponseDto>(`${this.clubsUrl}/${id}`);
+  }
+
 
   constructor(private http: HttpClient) { }
 }

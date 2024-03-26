@@ -66,13 +66,13 @@
       <div class="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm" *ngFor="let club of clubs">
         <img src="{{club.imageUrl}}" class="object-fill w-full h-60" alt=""/>
         <div class="px-5 py-3">
-          <a href="/" aria-label="Category" title="Film It!"
+          <a [routerLink]="['/club-details', club.id]" aria-label="name" title="Club name"
              class="inline-block mb-3 text-2xl font-bold leading-5 transition-colors duration-200 hover:text-green-800">{{ club.name }}</a>
           <p class="mb-2 text-gray-700 border-y-2 p-1">
             {{ club.description }}
           </p>
           <div class=" flex justify-between text-center">
-            <a href="/" aria-label=""
+            <a [routerLink]="['/club-details', club.id]"  aria-label=""
                class="inline-flex  font-semibold transition-colors duration-200 text-green-700 hover:text-green-900">Learn
               more</a>
 
