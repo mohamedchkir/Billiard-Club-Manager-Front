@@ -11,7 +11,7 @@ import {PlayerComponent} from './view/page/player/player.component';
 import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
 import {ClubEffects} from './core/state/club/club.effects';
-import {HttpClientModule, provideHttpClient, withFetch} from "@angular/common/http";
+import {HttpClientModule, provideHttpClient, withFetch, withInterceptors} from "@angular/common/http";
 import {clubFeature, clubFeatureKey} from "./core/state/club/club.reducer";
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { FooterComponent } from './view/component/footer/footer.component';
@@ -63,6 +63,7 @@ import {provideToastr, ToastrModule} from "ngx-toastr";
 import { CityAddBottomSheetComponent } from './view/component/city-add-bottom-sheet/city-add-bottom-sheet.component';
 import { UserEffects } from './core/state/user/user.effects';
 import {userFeature} from "./core/state/user/user.reducer";
+import {authenticationInterceptor} from "./core/interceptor/authentication/authentication.interceptor";
 
 @NgModule({
   declarations: [
@@ -135,7 +136,9 @@ import {userFeature} from "./core/state/user/user.reducer";
   ],
   providers: [
     provideHttpClient(),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    provideHttpClient(withInterceptors([
+      authenticationInterceptor])),
 
   ],
   bootstrap: [AppComponent]

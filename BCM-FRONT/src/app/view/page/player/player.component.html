@@ -60,13 +60,11 @@
 <div class="bg-gray-950">
   <div
     class="px-4 py-1 border-y border-gray-400 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
-      <ng-container *ngIf="(players$ | async) as players">
-    <div class="grid gap-8 lg:grid-cols-4n justify-center sm:max-w-sm sm:mx-auto lg:max-w-full m-8 min-h-60">
-
+    <div class="grid gap-8 lg:grid-cols-4 sm:max-w-sm sm:mx-auto lg:max-w-full " *ngIf="(players$ | async) as players">
       <div class="flex border-b pb-4 border-gray-700" *ngFor="let player of players">
         <img class="object-cover w-20 h-20 mr-4 rounded-full shadow"
-          src="{{player.imageUrl}}"
-          alt="Person" />
+             src="{{player.imageUrl}}"
+             alt="Person" />
         <div class="flex flex-col justify-center">
           <p class="text-lg font-bold text-white font-mono"> {{player.firstName}}  {{player.lastName}}</p>
           <p class="flex text-center text-sm">
@@ -90,7 +88,6 @@
 
 
     </div>
-    </ng-container>
   </div>
 
 </div>

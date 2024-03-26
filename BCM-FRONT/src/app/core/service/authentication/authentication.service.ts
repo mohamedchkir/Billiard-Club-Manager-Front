@@ -45,7 +45,7 @@ export class AuthenticationService {
   }
 
   profile(): Observable<UserAuthInterface> {
-    return this.http.get<UserAuthInterface>(this.url + 'profile');
+    return this.http.get<UserAuthInterface>(this.url + 'info');
   }
 
   isAuthenticate(): Observable<boolean> {

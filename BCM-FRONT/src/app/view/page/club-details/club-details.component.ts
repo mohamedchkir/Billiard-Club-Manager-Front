@@ -8,6 +8,7 @@ import {ToastrService} from "ngx-toastr";
   styleUrl: './club-details.component.css'
 })
 export class ClubDetailsComponent {
+
   constructor(private clipboard: Clipboard, private toastr: ToastrService) {
   }
   share() {
@@ -15,4 +16,5 @@ export class ClubDetailsComponent {
     this.clipboard.copy(url);
     this.toastr.success('Link copied to clipboard');
   }
+
 }

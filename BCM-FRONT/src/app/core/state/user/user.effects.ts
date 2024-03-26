@@ -29,7 +29,15 @@ export class UserEffects {
    )
  ));
 
-
+  userInfo$ = createEffect(() => this.actions$.pipe(
+    ofType(UserActions.userInfo),
+    concatMap(() =>
+      this.authService.profile().pipe(
+        map(user => UserActions.userInfoSuccess(user)),
+        catchError(error => of(UserActions.userInfoFailure({ error })))
+      )
+    )
+  ));
 
   constructor(private actions$: Actions,
               private authService: AuthenticationService) {}

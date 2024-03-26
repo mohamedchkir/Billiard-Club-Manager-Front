@@ -6,7 +6,7 @@ import {throwError} from "rxjs";
 
 export const authenticationInterceptor: HttpInterceptorFn = (req, next) => {
   const authService = inject(AuthenticationService);
-  const whitelistUrls = ['api/auth/login', 'api/auth/register', 'api/auth/refresh-token'];
+  const whitelistUrls = ['api/v1/auth/login', 'api/v1/auth/register', 'api/v1/auth/refresh-token'];
   let token = localStorage.getItem("access-token");
 
   if (!whitelistUrls.some(url => req.url.includes(url))) {

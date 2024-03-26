@@ -27,8 +27,8 @@
             Join us for exciting matches, skilled plays, and a community passionate about the art of billiards.
           </p>
         </div>
-        <div>
-          <a href="/"
+        <div *ngIf="(user | async)?.role == ''">
+          <a href="/register"
             class="inline-flex items-center justify-center w-40 h-12 px-6 font-semibold tracking-wide text-green-800 transition duration-300 rounded shadow-md border border-green-800 bg-gray-950 hover:bg-green-800 hover:text-white focus:shadow-outline focus:outline-none">
             Join Us
           </a>
