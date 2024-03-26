@@ -10,7 +10,7 @@ import {AuthResponseInterface} from "../../model/AuthResponseInterface";
   providedIn: 'root'
 })
 export class AuthenticationService {
-  private url: string = "http://localhost:8080/api/v1/auth/";
+  private url: string = "http://localhost:8888/api/v1/auth/";
   private _user: UserAuthInterface | null = null;
 
   constructor(
@@ -37,7 +37,7 @@ export class AuthenticationService {
   }
 
   login(username: string, password: string): Observable<AuthResponseInterface> {
-    return this.http.post<AuthResponseInterface>(this.url + 'login', {username, password});
+    return this.http.post<AuthResponseInterface>(this.url + 'login', {email:username, password:password});
   }
 
   register(firstName: string, lastName: string, email: string, password: string,telephone:string, cityId:string): Observable<AuthResponseInterface> {

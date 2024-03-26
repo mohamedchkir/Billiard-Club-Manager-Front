@@ -62,6 +62,7 @@ import {BrowserAnimationsModule, provideAnimations} from "@angular/platform-brow
 import {provideToastr, ToastrModule} from "ngx-toastr";
 import { CityAddBottomSheetComponent } from './view/component/city-add-bottom-sheet/city-add-bottom-sheet.component';
 import { UserEffects } from './core/state/user/user.effects';
+import {userFeature} from "./core/state/user/user.reducer";
 
 @NgModule({
   declarations: [
@@ -95,6 +96,7 @@ import { UserEffects } from './core/state/user/user.effects';
     StoreModule.forFeature(playerFeature),
     StoreModule.forFeature(cityFeature),
     StoreModule.forFeature(serviceFeature),
+    StoreModule.forFeature(userFeature),
     EffectsModule.forFeature([ClubEffects, PlayerEffects, CityEffects, ServiceEffects, UserEffects]),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: !isDevMode()}),
     FormsModule,

@@ -36,7 +36,7 @@ export const initialState: State = {
 
 export const reducer = createReducer(
   initialState,
-  on(UserActions.loginSuccess, (state, {accessToken, tokenExpiration, refreshToken}) => ({...state, accessToken, tokenExpiration, refreshToken})),
+  on(UserActions.loginSuccess, (state, AuthResponse) => ({...state, accessToken:AuthResponse["access-token"], tokenExpiration:AuthResponse["token-expiration"], refreshToken:AuthResponse["refresh-token"]})),
   on(UserActions.loginFailure, (state, {error}) => ({...state, error})),
   on(UserActions.logoutSuccess, (state) => ({...state})),
   on(UserActions.logoutFailure, (state, {error}) => ({...state, error})),
