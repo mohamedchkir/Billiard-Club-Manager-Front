@@ -9,6 +9,7 @@ export const clubFeatureKey = 'club';
 export interface State {
   pageable: ClubPageableResponse;
   error: SimpleErrorResponse | null;
+  club: ClubResponseDto | null;
 }
 
 export const initialState: State = {
@@ -24,6 +25,7 @@ export const initialState: State = {
     empty: false
   },
   error: null,
+  club: null,
 };
 
 export const reducer = createReducer(
@@ -66,13 +68,20 @@ export const reducer = createReducer(
   on(ClubActions.addClub, (state) => state),
 
   on(ClubActions.loadClubByIdSuccess, (state, { club }) => ({
-    ...state,club
+    ...state,
+    error: null,
+    club: club
   })),
   on(ClubActions.loadClubByIdFailure, (state, { error }) => ({
     ...state,
+    club: null,
     error: error
   })),
-  on(ClubActions.loadClubById, (state) => state),
+  on(ClubActions.loadClubById, (state, {id}) => ({
+    ...state,
+    club: null,
+    error: null
+  })),
 
 );
 

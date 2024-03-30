@@ -34,7 +34,7 @@
       </a>
       </ul>
 
-      <ul *ngIf="(user | async)?.role != 'CLIENT'; else logout" class="items-center hidden ml-auto space-x-8 lg:flex">
+      <ul *ngIf="(user | async)?.role == ''; else logout" class="items-center hidden ml-auto space-x-8 lg:flex">
         <li>
           <a href="/login" aria-label="Sign in" title="Sign in"
              class="font-mono group relative inline-block overflow-hidden rounded px-12 py-3 text-sm font-medium text-white hover:text-green-800 focus:outline-none focus:ring ">
@@ -70,7 +70,7 @@
 
         <ul class="items-center hidden space-x-8 lg:flex">
         <li>
-          <a href="/logout" aria-label="LogOut" title="LogOut"
+          <a (click)="logOut()" aria-label="LogOut" title="LogOut"
              class=" font-mono group relative inline-block overflow-hidden rounded px-12 py-3 text-sm font-medium text-white bg-red-500 hover:font-bold hover:bg-red-500 focus:outline-none focus:ring ">
              <span
                class="ease absolute left-0 top-0 h-0 w-0 border-t-2 border-white transition-all duration-200 group-hover:w-full"></span>

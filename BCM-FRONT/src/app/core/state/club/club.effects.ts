@@ -59,7 +59,7 @@ export class ClubEffects {
         this.clubService.getClubById(action.id).
           pipe(
             map(club => ClubActions.loadClubByIdSuccess({ club })),
-            catchError(error => of(ClubActions.loadClubByIdFailure({ error }))))
+            catchError(error => of(ClubActions.loadClubByIdFailure({ error: error.error.message }))))
       )
     );
   });

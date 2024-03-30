@@ -3,7 +3,7 @@ import {Store} from "@ngrx/store";
 import {Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
 import {UserActions} from "../../../core/state/user/user.actions";
-import {selectUserError, selectUserKeys} from "../../../core/state/user/user.selectors";
+import {selectUserError, selectUserInfo, selectUserKeys} from "../../../core/state/user/user.selectors";
 
 @Component({
   selector: 'app-login',
@@ -16,6 +16,7 @@ export class LoginComponent {
   password: string = "";
   keys = this.store.select(selectUserKeys);
   error$ = this.store.select(selectUserError);
+  user$ = this.store.select(selectUserInfo);
   constructor(
     private store: Store,
     private route: Router,
@@ -31,14 +32,25 @@ export class LoginComponent {
           localStorage.setItem("token-expiration", value.tokenExpiration)
           localStorage.setItem("refresh-token", value.refreshToken);
 
-          this.route.navigate(['/home']);
+          this.store.dispatch(UserActions.userInfo());
+
+          this.user$.subscribe(
+            user => {
+              if (user.role !== '') {
+                if (user.role === "MANAGER") {
+                  this.route.navigate(['/dashboard']);
+                } else {
+                  this.route.navigate(['/home']);
+                }
+              }
+            }
+          )
         }
       }
     );
-
     this.error$.subscribe(
       error => {
-        if (error !== null) {
+        if (error !== '') {
           this.toast.error(error);
         }
       }

@@ -39,6 +39,7 @@
             </svg>
             <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase font-mono ">BCM</span>
           </a>
+
         </div>
 
         <!--        <div class="flex items-center">-->
@@ -63,6 +64,22 @@
         <!--            </div>-->
         <!--          </div>-->
         <!--        </div>-->
+        <ul class="items-center hidden space-x-8 lg:flex">
+          <li>
+            <a (click)="logOut()" aria-label="LogOut" title="LogOut"
+               class=" font-mono group relative inline-block overflow-hidden rounded px-12 py-3 text-sm font-medium text-white bg-red-500 hover:font-bold hover:bg-red-500 focus:outline-none focus:ring ">
+             <span
+               class="ease absolute left-0 top-0 h-0 w-0 border-t-2 border-white transition-all duration-200 group-hover:w-full"></span>
+              <span
+                class="ease absolute right-0 top-0 h-0 w-0 border-r-2 border-white transition-all duration-200 group-hover:h-full"></span>
+              <span
+                class="ease absolute bottom-0 right-0 h-0 w-0 border-b-2 border-white transition-all duration-200 group-hover:w-full"></span>
+              <span
+                class="ease absolute bottom-0 left-0 h-0 w-0 border-l-2 border-white transition-all duration-200 group-hover:h-full"></span>
+              Log Out
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>

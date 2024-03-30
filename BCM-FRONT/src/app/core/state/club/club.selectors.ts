@@ -25,8 +25,8 @@ export const selectClubPage = createSelector(
   (pageable) => pageable.number
 );
 
-export const selectClubById = createSelector(
+export const selectClub = createSelector(
   selectClubState,
-  (state) => state.pageable.content.find(club => club.id)
+  (state) => state.club
 );
 

@@ -87,7 +87,7 @@
         <div
           class="flex flex-col p-12 rounded-xl border border-solid border-neutral-800 leading-[150%] max-md:px-5 max-md:mt-8">
           <h2 class="text-xl font-semibold text-white">Description</h2>
-          <p class="mt-3.5 text-lg font-light leading-7 text-neutral-400">{{club.description}}</p>
+          <p class="mt-3.5 text-lg font-light leading-7 text-neutral-400">{{club.description | slice:0:30}}</p>
           <div class="flex gap-5 pt-5 mt-12 border-t border-solid border-neutral-800 max-md:flex-wrap">
 
           </div>
@@ -105,34 +105,7 @@
 
               {{ service.name }}
             </div>
-            <div
-                 class="flex  justify-center gap-2.5  mt-7  max-md:flex-wrap">
 
-              <img class="shrink-0 h-6 w-6 aspect-square" src="assets/images/icons8-wifi-50%20(1).png" alt="icon-logo"/>
-
-              hello
-            </div>
-            <div
-                 class="flex  justify-center gap-2.5  mt-7  max-md:flex-wrap">
-
-              <img class="shrink-0 h-6 w-6 aspect-square" src="assets/images/icons8-wifi-50%20(1).png" alt="icon-logo"/>
-
-              hello
-            </div>
-            <div
-                 class="flex  justify-center gap-2.5  mt-7  max-md:flex-wrap">
-
-              <img class="shrink-0 h-6 w-6 aspect-square" src="assets/images/icons8-wifi-50%20(1).png" alt="icon-logo"/>
-
-              hello
-            </div>
-            <div
-                 class="flex  justify-center gap-2.5  mt-7  max-md:flex-wrap">
-
-              <img class="shrink-0 h-6 w-6 aspect-square" src="assets/images/icons8-wifi-50%20(1).png" alt="icon-logo"/>
-
-              hello
-            </div>
           </div>
 
         </div>

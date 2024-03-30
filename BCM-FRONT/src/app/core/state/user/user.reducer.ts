@@ -36,19 +36,21 @@ export const initialState: State = {
 
 export const reducer = createReducer(
   initialState,
-  on(UserActions.loginSuccess, (state, AuthResponse) => ({...state, accessToken:AuthResponse["access-token"], tokenExpiration:AuthResponse["token-expiration"], refreshToken:AuthResponse["refresh-token"]})),
+  on(UserActions.loginSuccess, (state, AuthResponse) => ({...state, accessToken:AuthResponse["access-token"], tokenExpiration:AuthResponse["token-expiration"], refreshToken:AuthResponse["refresh-token"], error: ""})),
   on(UserActions.loginFailure, (state, {error}) => ({...state, error})),
-  on(UserActions.logoutSuccess, (state) => ({...state})),
+  on(UserActions.logoutSuccess, (state) => initialState),
   on(UserActions.logoutFailure, (state, {error}) => ({...state, error})),
-  on(UserActions.refreshTokenSuccess, (state, {accessToken, tokenExpiration, refreshToken}) => ({...state, accessToken, tokenExpiration, refreshToken})),
+  on(UserActions.refreshTokenSuccess, (state, {accessToken, tokenExpiration, refreshToken}) => ({...state, accessToken, tokenExpiration, refreshToken, error: ""})),
   on(UserActions.refreshTokenFailure, (state, {error}) => ({...state, error})),
-  on(UserActions.refreshToken, (state, {refreshToken}) => ({...state, refreshToken})),
-  on(UserActions.registerSuccess, (state, {accessToken, tokenExpiration, refreshToken}) => ({...state, accessToken, tokenExpiration, refreshToken})),
+  on(UserActions.refreshToken, (state, {refreshToken}) => ({...state, refreshToken, error: ""})),
+  on(UserActions.registerSuccess, (state, AuthResponse) => ({...state, accessToken:AuthResponse["access-token"], tokenExpiration:AuthResponse["token-expiration"], refreshToken:AuthResponse["refresh-token"], error: ""})),
   on(UserActions.registerFailure, (state, {error}) => ({...state, error})),
-  on(UserActions.userInfoSuccess, (state, user) => ({...state, user})),
+  on(UserActions.userInfoSuccess, (state, user) => ({...state, user, error: ""})),
   on(UserActions.userInfoFailure, (state, {error}) => ({...state, error})),
-
-
+  on(UserActions.forgotPasswordSuccess, (state) => ({...state, error: ""})),
+  on(UserActions.forgotPasswordFailure, (state, {error}) => ({...state, error})),
+  on(UserActions.resetPasswordSuccess, (state) => ({...state, error: ""})),
+  on(UserActions.resetPasswordFailure, (state, {error}) => ({...state, error})),
 
 );
 

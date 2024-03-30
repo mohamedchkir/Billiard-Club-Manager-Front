@@ -24,4 +24,8 @@ export class NavbarComponent implements OnInit{
     this.store.dispatch(UserActions.userInfo());
   }
 
+  logOut() {
+    this.store.dispatch(UserActions.logout());
+  }
+
 }

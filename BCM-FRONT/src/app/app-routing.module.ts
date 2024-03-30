@@ -13,19 +13,30 @@ import {CityDashComponent} from "./view/component/city-dash/city-dash.component"
 import {ServiceDashComponent} from "./view/component/service-dash/service-dash.component";
 import {NewsComponent} from "./view/page/news/news.component";
 import {ClubDetailsComponent} from "./view/page/club-details/club-details.component";
+import {clubFoundGuard} from "./core/guard/club-found/club-found.guard";
+import {NotFoundComponent} from "./view/page/not-found/not-found.component";
+import {hasRightAuthorityGuard} from "./core/guard/has-right-authority/has-right-authority.guard";
+import {ForgotPasswordPageComponent} from "./view/page/forgot-password-page/forgot-password-page.component";
+import {ResetPasswordPageComponent} from "./view/page/reset-password-page/reset-password-page.component";
+import {authenticateGuard} from "./core/guard/authenticate/authenticate.guard";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'club', component: ClubComponent},
+  {path: 'home', component: HomeComponent,canActivate: [hasRightAuthorityGuard,authenticateGuard], data: {authority: 'ROLE_CLIENT'}},
+  {path: 'club', component: ClubComponent,canActivate: [hasRightAuthorityGuard,authenticateGuard], data: {authority: 'ROLE_CLIENT'}},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'player', component: PlayerComponent},
-  {path: 'news', component: NewsComponent},
-  {path: 'club-details/:id', component: ClubDetailsComponent},
+  {path: 'forgot-password', component: ForgotPasswordPageComponent},
+  {path: 'reset-password', component: ResetPasswordPageComponent},
+  {path: 'player', component: PlayerComponent,canActivate: [hasRightAuthorityGuard,authenticateGuard], data: {authority: 'ROLE_CLIENT'}},
+  {path: 'news', component: NewsComponent,canActivate: [hasRightAuthorityGuard,authenticateGuard], data: {authority: 'ROLE_CLIENT'}},
+  {path: '404', component: NotFoundComponent},
+  {path: 'club-details/:id', component: ClubDetailsComponent, canActivate: [clubFoundGuard, hasRightAuthorityGuard,authenticateGuard], data: {authority: 'ROLE_CLIENT'}},
 
 
-  {path: 'dashboard', component: DashboardComponent, children: [
+
+  {path: 'dashboard', component: DashboardComponent, canActivate: [hasRightAuthorityGuard,authenticateGuard], data: {authority: 'ROLE_MANAGER'},
+    children: [
       {path: '', component: StatisticComponent},
       {path: 'user', component: UserDashComponent},
       {path: 'club', component: ClubDashComponent},

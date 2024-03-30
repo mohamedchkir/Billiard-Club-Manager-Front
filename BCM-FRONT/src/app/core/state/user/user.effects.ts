@@ -14,7 +14,7 @@ export class UserEffects {
     concatMap(action =>
       this.authService.login(action.username, action.password).pipe(
         map(response => UserActions.loginSuccess(response)),
-        catchError(error => of(UserActions.loginFailure({ error })))
+        catchError(error => of(UserActions.loginFailure({ error: error.error.message })))
       )
     )
   ));
@@ -24,7 +24,7 @@ export class UserEffects {
    concatMap(action =>
      this.authService.register(action.firstName,action.lastName,action.email, action.password,action.telephone,action.cityId).pipe(
        map(response => UserActions.registerSuccess(response)),
-       catchError(error => of(UserActions.registerFailure({ error })))
+       catchError(error => of(UserActions.registerFailure({ error: error.error.message })))
      )
    )
  ));
@@ -34,7 +34,37 @@ export class UserEffects {
     concatMap(() =>
       this.authService.profile().pipe(
         map(user => UserActions.userInfoSuccess(user)),
-        catchError(error => of(UserActions.userInfoFailure({ error })))
+        catchError(error => of(UserActions.userInfoFailure({ error: error.error.message })))
+      )
+    )
+  ));
+
+  logout$ = createEffect(() => this.actions$.pipe(
+    ofType(UserActions.logout),
+    concatMap(() =>
+      this.authService.logout().pipe(
+        map(() => UserActions.logoutSuccess()),
+        catchError(error => of(UserActions.logoutFailure({ error: error.error.message })))
+      )
+    )
+  ));
+
+  forgotPassword$ = createEffect(() => this.actions$.pipe(
+    ofType(UserActions.forgotPassword),
+    concatMap(action =>
+      this.authService.forgotPassword(action.email).pipe(
+        map(() => UserActions.forgotPasswordSuccess()),
+        catchError(error => of(UserActions.forgotPasswordFailure({ error: error.error.message })))
+      )
+    )
+  ));
+
+  resetPassword$ = createEffect(() => this.actions$.pipe(
+    ofType(UserActions.resetPassword),
+    concatMap(action =>
+      this.authService.resetPassword(action.password, action.token).pipe(
+        map(() => UserActions.resetPasswordSuccess()),
+        catchError(error => of(UserActions.resetPasswordFailure({ error: error.error.message })))
       )
     )
   ));

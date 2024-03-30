@@ -40,7 +40,7 @@ export class AuthenticationService {
     return this.http.post<AuthResponseInterface>(this.url + 'login', {email:username, password:password});
   }
 
-  register(firstName: string, lastName: string, email: string, password: string,telephone:string, cityId:string): Observable<AuthResponseInterface> {
+  register(firstName: string, lastName: string, email: string, password: string,telephone:string, cityId:number): Observable<AuthResponseInterface> {
     return this.http.post<AuthResponseInterface>(this.url + 'register', {firstName, lastName, email, password,telephone, cityId});
   }
 
@@ -78,6 +78,7 @@ export class AuthenticationService {
       tap((value) => {
           if (!value) {
             this.toast.error("You don't have the right authority");
+            this.router.navigate(['/home']);
           }
         }
       )
@@ -91,6 +92,7 @@ export class AuthenticationService {
       tap(() => {
         this.clearToken();
         this.router.navigate(['/login']);
+        this.toast.success("Logout success");
       })
     );
   }
@@ -124,4 +126,5 @@ export class AuthenticationService {
 
     this.user = null;
   }
+
 }

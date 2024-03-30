@@ -14,11 +14,18 @@ export const UserActions = createActionGroup({
     refreshToken: props<{ refreshToken: string }>(),
     refreshTokenSuccess: props<{ accessToken: string, tokenExpiration: string, refreshToken: string }>(),
     refreshTokenFailure: props<{ error: string }>(),
-    register: props<{firstName:string,lastName:string,email:string,password:string,telephone:string,cityId:string}>(),
+    register: props<{firstName:string,lastName:string,email:string,password:string,telephone:string,cityId:number}>(),
     registerSuccess:props<AuthResponseInterface>(),
     registerFailure:props<{ error: string }>(),
     userInfo:emptyProps,
     userInfoSuccess:props<UserAuthInterface>(),
     userInfoFailure:props<{ error: string }>(),
+    forgotPassword:props<{email:string}>(),
+    forgotPasswordSuccess:emptyProps(),
+    forgotPasswordFailure:props<{ error: string }>(),
+    resetPassword:props<{password:string,token:string}>(),
+    resetPasswordSuccess:emptyProps(),
+    resetPasswordFailure:props<{ error: string }>(),
+
   }
 });
